@@ -41,14 +41,12 @@ public class ValueDuration extends ValueSimple<Long> {
 	
 	@Override
 	public Type getType() {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		return TypePrimitive.DURATION;
 	}
 	
 	@Override
 	public Value getDefaultValue() {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		return new ValueDuration(new Long(0));
 	}
 	
 	/**
@@ -125,49 +123,71 @@ public class ValueDuration extends ValueSimple<Long> {
 	
 	@Override
 	public ValueBoolean isLowerThan(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueBoolean(null);
+		Long v = ((ValueDuration)value).getValue();
+		return new ValueBoolean(getValue().compareTo(v) < 0);
 	}
 	
 	@Override
 	public ValueDuration addValue(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueDuration(new Long(null));
+		return new ValueDuration(getValue() + ((ValueDuration)value).getValue());
 	}
 	
 	@Override
 	public ValueDuration subtract(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueDuration(new Long(null));
+		return new ValueDuration(getValue() - ((ValueDuration)value).getValue());
 	}
 	
 	@Override
 	public ValueDuration multiply(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueDuration(new Long(null));
+		return new ValueDuration(getValue() * ((ValueDuration)value).getValue());
 	}
 	
 	@Override
 	public Value divide(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueDuration(new Long(null));
+		return new ValueDuration(getValue() / ((ValueDuration)value).getValue());
 	}
 	
 	@Override
 	public ValueDuration modulo(Value value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		sameTypesOrThrow(value, Operation.ADD);
+		if(isNull() || value.isNull())
+			return new ValueDuration(new Long(null));
+		return new ValueDuration(getValue() % ((ValueDuration)value).getValue());
 	}
 	
 	@Override
 	public ValueDuration negate() {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		return new ValueDuration(isNull()? null : -getValue());
 	}
 	
 	@Override
 	public Value convertTo(Type type) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		switch(type.getPrimaryType()) {
+			case DURATION:
+				return this;
+			case DOUBLE:
+				return new ValueDouble(getValue() == null? null : getValue().doubleValue());
+			case INT:
+				return new ValueInt(getValue() == null? null : getValue().longValue());
+			case STRING:
+				return getValue() == null? ValueString.NULL_STRING : new ValueString(getValue().toString());
+			default:
+				throw new UnsupportedConversionException(getType(), type);
+		}
 	}
 }

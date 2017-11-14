@@ -54,11 +54,11 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
-		Scanner scanner = new Scanner(System.in);
-		scanner.useDelimiter("\\n");
-		while(scanner.hasNext())
-			executeQueries(root, scanner.next());
-		scanner.close();
+//		Scanner scanner = new Scanner(System.in);
+//		scanner.useDelimiter("\\n");
+//		while(scanner.hasNext())
+			executeQueries(root, "SELECT 1 AS one");
+//		scanner.close();
 	}
 	
 	private static PathName getPathName(ZMI zmi) {

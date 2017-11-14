@@ -96,7 +96,7 @@ public abstract class Value {
 	/**
 	 * Returns a new value created by adding argument to this value (operator +).
 	 * 
-	 * @param the right side of the operator
+	 * @param //the right side of the operator
 	 * @return a sum of two values
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)
@@ -109,7 +109,7 @@ public abstract class Value {
 	/**
 	 * Returns a new value created by subtracting argument from this value (operator -).
 	 * 
-	 * @param the right side of the operator
+	 * @param //the right side of the operator
 	 * @return a difference of two values
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)
@@ -121,7 +121,7 @@ public abstract class Value {
 	/**
 	 * Returns a new value created by multiplying this value by an argument (operator *).
 	 * 
-	 * @param the right side of the operator
+	 * @param //the right side of the operator
 	 * @return a product of two values
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)
@@ -133,7 +133,7 @@ public abstract class Value {
 	/**
 	 * Returns a new value created by dividing this value by an argument (operator /).
 	 * 
-	 * @param the right side of the operator
+	 * @param //the right side of the operator
 	 * @return a quotient of two values
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)
@@ -145,7 +145,7 @@ public abstract class Value {
 	/**
 	 * Returns a remainder of a division of this value by an argument (operator %).
 	 * 
-	 * @param the right side of the operator
+	 * @param //the right side of the operator
 	 * @return a remainder
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)

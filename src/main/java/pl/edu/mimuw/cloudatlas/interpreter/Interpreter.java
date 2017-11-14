@@ -83,14 +83,7 @@ import pl.edu.mimuw.cloudatlas.interpreter.query.Absyn.Statement;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Absyn.StatementC;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Absyn.Where;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Absyn.WhereC;
-import pl.edu.mimuw.cloudatlas.model.Attribute;
-import pl.edu.mimuw.cloudatlas.model.TypePrimitive;
-import pl.edu.mimuw.cloudatlas.model.Value;
-import pl.edu.mimuw.cloudatlas.model.ValueBoolean;
-import pl.edu.mimuw.cloudatlas.model.ValueDouble;
-import pl.edu.mimuw.cloudatlas.model.ValueInt;
-import pl.edu.mimuw.cloudatlas.model.ValueString;
-import pl.edu.mimuw.cloudatlas.model.ZMI;
+import pl.edu.mimuw.cloudatlas.model.*;
 
 public class Interpreter {
 	private static class ValuesPair {
@@ -329,8 +322,13 @@ public class Interpreter {
 		}
 
 		public Result visit(CondExprAndC expr, Environment env) {
-			// TODO
-			throw new UnsupportedOperationException("Not yet implemented");
+			try {
+				Result left = expr.condexpr_1.accept(new CondExprInterpreter(), env);
+				Result right = expr.condexpr_2.accept(new CondExprInterpreter(), env);
+				return left.and(right);
+			} catch(Exception exception) {
+				throw new InsideQueryException(PrettyPrinter.print(expr), exception);
+			}
 		}
 
 		public Result visit(CondExprNotC expr, Environment env) {
@@ -368,8 +366,13 @@ public class Interpreter {
 		}
 
 		public Result visit(BasicExprMulC expr, Environment env) {
-			// TODO
-			throw new UnsupportedOperationException("Not yet implemented");
+			try {
+				Result left = expr.basicexpr_1.accept(new BasicExprInterpreter(), env);
+				Result right = expr.basicexpr_2.accept(new BasicExprInterpreter(), env);
+				return left.multiply(right);
+			} catch(Exception exception) {
+				throw new InsideQueryException(PrettyPrinter.print(expr), exception);
+			}
 		}
 
 		public Result visit(BasicExprDivC expr, Environment env) {
@@ -469,8 +472,7 @@ public class Interpreter {
 		}
 
 		public Result visit(RelOpEqC op, ValuesPair pair) {
-			// TODO
-			throw new UnsupportedOperationException("Not yet implemented");
+			return pair.left.isEqual(pair.right);
 		}
 
 		public Result visit(RelOpNeC op, ValuesPair pair) {
@@ -482,8 +484,7 @@ public class Interpreter {
 		}
 
 		public Result visit(RelOpLeC op, ValuesPair pair) {
-			// TODO
-			throw new UnsupportedOperationException("Not yet implemented");
+			return pair.left.isLowerThan(pair.right).or(pair.left.isEqual(pair.right));
 		}
 
 		public Result visit(RelOpGeC op, ValuesPair pair) {
