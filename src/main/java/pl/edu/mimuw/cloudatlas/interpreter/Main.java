@@ -50,7 +50,7 @@ import pl.edu.mimuw.cloudatlas.model.ValueTime;
 import pl.edu.mimuw.cloudatlas.model.ZMI;
 
 public class Main {
-	private static ZMI root;
+	public static ZMI root;
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
@@ -66,7 +66,7 @@ public class Main {
 		return zmi.getFather() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
 	}
 	
-	private static void executeQueries(ZMI zmi, String query) throws Exception {
+	public static void executeQueries(ZMI zmi, String query) throws Exception {
 		if(!zmi.getSons().isEmpty()) {
 			for(ZMI son : zmi.getSons())
 				executeQueries(son, query);
