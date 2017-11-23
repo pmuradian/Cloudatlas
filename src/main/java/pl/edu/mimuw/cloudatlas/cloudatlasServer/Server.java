@@ -34,7 +34,8 @@ public class Server implements QueryExecutor {
             QueryExecutor engine = new Server();
             QueryExecutor stub = (QueryExecutor) UnicastRemoteObject.exportObject(engine, 0);
             Registry registry = LocateRegistry.getRegistry();
-            registry.rebind(QueryExecutor.class.getName(), stub);
+            String name = QueryExecutor.class.getName();
+            registry.rebind(name, stub);
             System.out.println("Server bound");
         } catch (Exception e) {
             System.err.println("ComputeEngine exception:");

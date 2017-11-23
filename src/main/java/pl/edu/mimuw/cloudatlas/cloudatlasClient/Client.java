@@ -11,9 +11,8 @@ public class Client {
             System.setSecurityManager(new SecurityManager());
         }
         try {
-            String name = "QueryExecutor";
             Registry registry = LocateRegistry.getRegistry(args[0]);
-            QueryExecutor executor = (QueryExecutor) registry.lookup(name);
+            QueryExecutor executor = (QueryExecutor) registry.lookup(QueryExecutor.class.getName());
             System.out.println(executor.execute("SELECT 1 AS one"));
         } catch (Exception e) {
             System.err.println("ComputePi exception:");
