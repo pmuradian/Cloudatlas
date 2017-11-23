@@ -1,0 +1,3 @@
+#!/bin/bash
+
+javac -cp ~/Documents/interfaceRMI/interfaceRMI.jar:./ src/main/java/cloudatlasClient/Client.java
