@@ -9,7 +9,7 @@ public class CloudatlasAgent implements QueryExecutor {
     @Override
     public String execute(String query) throws RemoteException {
         try {
-            Main.executeQueries(Main.root, query);
+            System.out.println(Main.executeQueries(Main.root, query));
         } catch (Exception e) {
             System.err.println("Server exception:");
             e.printStackTrace();

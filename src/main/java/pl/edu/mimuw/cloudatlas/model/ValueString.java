@@ -93,7 +93,11 @@ public class ValueString extends ValueSimple<String> {
 					return new ValueDouble(null);
 				}
 			case DURATION:
-				return new ValueDuration(getValue());
+				try {
+					return new ValueDuration(getValue());
+				} catch (UnsupportedOperationException e) {
+					return new ValueDuration((Long) null);
+				}
 			case INT:
 				try {
 					return new ValueInt(Long.parseLong(getValue()));
@@ -106,7 +110,7 @@ public class ValueString extends ValueSimple<String> {
 				try {
 					return new ValueTime(getValue());
 				} catch(ParseException exception) {
-					return new ValueTime((Long)null);
+					return new ValueTime((Long) null);
 				}
 			default:
 				throw new UnsupportedConversionException(getType(), type);

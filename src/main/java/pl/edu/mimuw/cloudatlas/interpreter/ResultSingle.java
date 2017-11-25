@@ -58,7 +58,13 @@ class ResultSingle extends Result {
 
 	@Override
 	public ValueList getList() {
-		throw new UnsupportedOperationException("Not a ResultList.");
+		if (value.getType().getPrimaryType() == Type.PrimaryType.LIST) {
+			return (ValueList) value;
+		}
+
+		ValueList list = new ValueList(value.getType());
+		list.add(value);
+		return list;
 	}
 
 	@Override

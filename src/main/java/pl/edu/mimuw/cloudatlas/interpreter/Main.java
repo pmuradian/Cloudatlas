@@ -34,19 +34,7 @@ import java.util.*;
 import pl.edu.mimuw.cloudatlas.interpreter.fetcher.Fetcher;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
-import pl.edu.mimuw.cloudatlas.model.PathName;
-import pl.edu.mimuw.cloudatlas.model.TypePrimitive;
-import pl.edu.mimuw.cloudatlas.model.Value;
-import pl.edu.mimuw.cloudatlas.model.ValueBoolean;
-import pl.edu.mimuw.cloudatlas.model.ValueContact;
-import pl.edu.mimuw.cloudatlas.model.ValueDouble;
-import pl.edu.mimuw.cloudatlas.model.ValueDuration;
-import pl.edu.mimuw.cloudatlas.model.ValueInt;
-import pl.edu.mimuw.cloudatlas.model.ValueList;
-import pl.edu.mimuw.cloudatlas.model.ValueSet;
-import pl.edu.mimuw.cloudatlas.model.ValueString;
-import pl.edu.mimuw.cloudatlas.model.ValueTime;
-import pl.edu.mimuw.cloudatlas.model.ZMI;
+import pl.edu.mimuw.cloudatlas.model.*;
 
 public class Main {
 	public static ZMI root;
@@ -58,7 +46,7 @@ public class Main {
 //		Scanner scanner = new Scanner(System.in);
 //		scanner.useDelimiter("\\n");
 //		while(scanner.hasNext())
-//		executeQueries(root, "SELECT avg(cpu_usage) AS cpu_usage WHERE (SELECT sum(cardinality)) > (SELECT to_integer((1 + 2 + 3 + 4) / 5))");
+		executeQueries(root, "SELECT avg(cpu_usage * to_double(num_cores)) AS cpu_load, sum(num_cores) AS num_cores");
 //		scanner.close();
 	}
 	
@@ -73,21 +61,28 @@ public class Main {
 
 	}
 	
-	public static void executeQueries(ZMI zmi, String query) throws Exception {
+	public static HashMap<String, Object> executeQueries(ZMI zmi, String query) throws Exception {
 		if(!zmi.getSons().isEmpty()) {
 			for(ZMI son : zmi.getSons())
 				executeQueries(son, query);
+
 			Interpreter interpreter = new Interpreter(zmi);
 			Yylex lex = new Yylex(new ByteArrayInputStream(query.getBytes()));
 			try {
 				List<QueryResult> result = interpreter.interpretProgram((new parser(lex)).pProgram());
 				PathName zone = getPathName(zmi);
+				HashMap attributeMap = new HashMap<Attribute, Value>();
 				for(QueryResult r : result) {
 					System.out.println(zone + ": " + r);
+					attributeMap.put(r.getName(), r.getValue());
 					zmi.getAttributes().addOrChange(r.getName(), r.getValue());
 				}
-			} catch(InterpreterException exception) {}
+				return attributeMap;
+			} catch(InterpreterException exception) {
+				System.out.println(exception.getMessage());
+			}
 		}
+		return null;
 	}
 	
 	private static ValueContact createContact(String path, byte ip1, byte ip2, byte ip3, byte ip4)
@@ -248,7 +243,7 @@ public class Main {
 		whatever02.getAttributes().add("creation", new ValueTime("2012/10/18 07:04:00.000"));
 		whatever02.getAttributes().add("cpu_usage", new ValueDouble(0.4));
 		whatever02.getAttributes().add("num_cores", new ValueInt(13l));
-		khaki31.getAttributes().add("num_processes", new ValueInt(222l));
+		whatever02.getAttributes().add("num_processes", new ValueInt(222l));
 		list = Arrays.asList(new Value[] {
 			new ValueString("odbc")
 		});

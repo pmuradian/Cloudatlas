@@ -27,12 +27,14 @@ package pl.edu.mimuw.cloudatlas.interpreter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 import pl.edu.mimuw.cloudatlas.model.ValueNull;
 
 class Environment {
 	private final TableRow row;
 	private final Map<String, Integer> columns = new HashMap<String, Integer>();
+	static Stack aggregationFunctions = new Stack<String>();
 
 	public Environment(TableRow row, List<String> columns) {
 		this.row = row;

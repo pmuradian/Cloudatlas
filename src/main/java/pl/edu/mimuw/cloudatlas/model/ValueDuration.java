@@ -25,6 +25,12 @@
 package pl.edu.mimuw.cloudatlas.model;
 
 
+import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * A class representing duration in milliseconds. The duration can be negative. This is a simple wrapper of a Java
  * <code>Long</code> object.
@@ -117,8 +123,29 @@ public class ValueDuration extends ValueSimple<Long> {
 	}
 	
 	private static long parseDuration(String value) {
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
+		try {
+			SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
+			Calendar calendar = GregorianCalendar.getInstance();
+
+			Date date = format.parse(value.substring(2, value.length() - 1));
+			calendar.setTime(date);
+			Long days = Long.valueOf(value.substring(1, 2));
+			Long hours = days * 24 + calendar.get(Calendar.HOUR);
+			Long minutes = hours * 60l +  calendar.get(Calendar.MINUTE);
+			Long seconds = minutes * 60l + calendar.get(Calendar.SECOND);
+			Long milliseconds = seconds * 1000l + calendar.get(Calendar.MILLISECOND);
+
+			switch (value.substring(0, 1)) {
+				case "-": return -milliseconds;
+				case "+": return milliseconds;
+				default: System.out.println("Duration must start with + or - sign");
+			}
+
+			return  milliseconds;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException("Duration parse exception");
+		}
 	}
 	
 	@Override

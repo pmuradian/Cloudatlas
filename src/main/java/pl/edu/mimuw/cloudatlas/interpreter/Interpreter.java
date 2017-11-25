@@ -26,7 +26,9 @@ package pl.edu.mimuw.cloudatlas.interpreter;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 
 import pl.edu.mimuw.cloudatlas.interpreter.query.PrettyPrinter;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Absyn.AliasedSelItemC;
@@ -273,15 +275,39 @@ public class Interpreter {
 
 	public class SelItemInterpreter implements SelItem.Visitor<QueryResult, Table> {
 		public QueryResult visit(SelItemC selItem, Table table) {
-			Environment env = null; // TODO
-			Result result = selItem.condexpr_.accept(new CondExprInterpreter(), env);
-			return new QueryResult(result.getValue());
+			ValueList results = null;
+			Iterator<TableRow> iterator = table.iterator();
+			while (iterator.hasNext()) {
+				Environment env = new Environment(iterator.next(), table.getColumns());
+				Result result = selItem.condexpr_.accept(new CondExprInterpreter(), env);
+				if (results == null) {
+					results = new ValueList(result.getType());
+				}
+				results.add(result.getValue());
+			}
+			for (Value value: results) {
+//				value.addValue()
+			}
+			return new QueryResult(results);
 		}
 
 		public QueryResult visit(AliasedSelItemC selItem, Table table) {
-			Environment env = null; // TODO
-			Result result = selItem.condexpr_.accept(new CondExprInterpreter(), env);
-			return new QueryResult(new Attribute(selItem.qident_), result.getValue());
+			ValueList results = null;
+			Iterator<TableRow> iterator = table.iterator();
+			Environment env = null;
+			while (iterator.hasNext()) {
+				env = new Environment(iterator.next(), table.getColumns());
+				Result result = selItem.condexpr_.accept(new CondExprInterpreter(), env);
+				if (results == null) {
+					results = new ValueList(result.getType());
+				}
+				results.add(result.getValue());
+			}
+			ResultSingle finalResult = new ResultSingle(results);
+			List arguments = new ArrayList<Result>();
+			arguments.add(finalResult);
+			Result aggregatedResult = Functions.getInstance().evaluate((String) env.aggregationFunctions.pop(), arguments);
+			return new QueryResult(new Attribute(selItem.qident_), aggregatedResult.getValue());
 		}
 	}
 
@@ -413,6 +439,7 @@ public class Interpreter {
 				for(CondExpr arg : expr.listcondexpr_)
 					arguments.add(arg.accept(new CondExprInterpreter(), env));
 
+				env.aggregationFunctions.push(expr.qident_);
 				return Functions.getInstance().evaluate(expr.qident_, arguments);
 			} catch(Exception exception) {
 				throw new InsideQueryException(PrettyPrinter.print(expr), exception);
