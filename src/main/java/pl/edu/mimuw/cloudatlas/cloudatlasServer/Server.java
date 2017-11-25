@@ -1,5 +1,6 @@
 package pl.edu.mimuw.cloudatlas.cloudatlasServer;
 
+import pl.edu.mimuw.cloudatlas.cloudatlasRMI.MachineDescriptionFetcher;
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.QueryExecutor;
 import pl.edu.mimuw.cloudatlas.interpreter.Main;
 
@@ -7,22 +8,11 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Map;
 
-public class Server implements QueryExecutor {
-
+public class Server {
     public Server() {
         super();
-    }
-
-    @Override
-    public String execute(String query) throws RemoteException {
-        try {
-            Main.executeQueries(Main.root, query);
-        } catch (Exception e) {
-            System.err.println("Server exception:");
-            e.printStackTrace();
-        }
-        return "asdf";
     }
 
     public static void main(String[] args) {
@@ -30,13 +20,23 @@ public class Server implements QueryExecutor {
             System.setSecurityManager(new SecurityManager());
         }
         try {
+            Main.main(null);
+
             System.out.println("Starting Server");
-            QueryExecutor engine = new Server();
-            QueryExecutor stub = (QueryExecutor) UnicastRemoteObject.exportObject(engine, 0);
+
+            // Fetcher listener
+            MachineDescriptionFetcher fetcher = new FetcherAgent();
+            MachineDescriptionFetcher machineStub = (MachineDescriptionFetcher) UnicastRemoteObject.exportObject(fetcher, 0);
+            Registry machineRegistry = LocateRegistry.getRegistry();
+            machineRegistry.rebind(MachineDescriptionFetcher.class.getName(), machineStub);
+            System.out.println("Fetcher bound");
+
+            // Cloudatlas agent
+            QueryExecutor agent = new CloudatlasAgent();
+            QueryExecutor stub = (QueryExecutor) UnicastRemoteObject.exportObject(agent, 0);
             Registry registry = LocateRegistry.getRegistry();
-            String name = QueryExecutor.class.getName();
-            registry.rebind(name, stub);
-            System.out.println("Server bound");
+            registry.rebind(QueryExecutor.class.getName(), stub);
+            System.out.println("Agent bound");
         } catch (Exception e) {
             System.err.println("ComputeEngine exception:");
             e.printStackTrace();

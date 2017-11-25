@@ -25,14 +25,13 @@
 package pl.edu.mimuw.cloudatlas.interpreter;
 
 import java.io.ByteArrayInputStream;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.ParseException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
+import pl.edu.mimuw.cloudatlas.interpreter.fetcher.Fetcher;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
 import pl.edu.mimuw.cloudatlas.model.PathName;
@@ -54,16 +53,24 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
+//		Fetcher fetcher = new Fetcher("/uw/violet07");
+//		fetcher.startFetching();
 //		Scanner scanner = new Scanner(System.in);
 //		scanner.useDelimiter("\\n");
 //		while(scanner.hasNext())
-			executeQueries(root, "SELECT 1 AS one");
+//		executeQueries(root, "SELECT avg(cpu_usage) AS cpu_usage WHERE (SELECT sum(cardinality)) > (SELECT to_integer((1 + 2 + 3 + 4) / 5))");
 //		scanner.close();
 	}
 	
 	private static PathName getPathName(ZMI zmi) {
 		String name = ((ValueString)zmi.getAttributes().get("name")).getValue();
 		return zmi.getFather() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
+	}
+
+	public static void updateZMIAttributes(String ZMIName, Map<String, Object> attributeMap) {
+		System.out.println(attributeMap);
+		System.out.println(ZMIName);
+
 	}
 	
 	public static void executeQueries(ZMI zmi, String query) throws Exception {
