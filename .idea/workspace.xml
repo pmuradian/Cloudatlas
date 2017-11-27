@@ -2,14 +2,190 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df78f8-fb4b-4500-a581-a3ae262daec0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/RequestExecutor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintAttributeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/QueryExecutorController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/serializer/SerializerZMI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/serializer/ValueSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Environment.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Environment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$10.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$11.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$12.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$13$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$13$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$13.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$2.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$3.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$4.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$5.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$6.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$7.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$8.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$9.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Functions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InsideQueryException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InsideQueryException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InternalInterpreterException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InternalInterpreterException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$BasicExprInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$BasicExprInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$BoolExprInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$BoolExprInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$CondExprInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$CondExprInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$NullsInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$NullsInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderByInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderByInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderItemInterpreter$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderItemInterpreter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderItemInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$OrderItemInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$ProgramInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$ProgramInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$RelOpInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$RelOpInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$SelItemInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$SelItemInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$StatementInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$StatementInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$ValuesPair.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$ValuesPair.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$WhereInterpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter$WhereInterpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Interpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InterpreterException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InterpreterException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InvalidTypeException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/InvalidTypeException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Main.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/NoSuchAttributeException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/NoSuchAttributeException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/QueryResult.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/QueryResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$10.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$11.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$12.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$2.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$3.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$4.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$5.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$6.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$7.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$8.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$9.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$AggregationOperation.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$AggregationOperation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$BinaryOperation.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$BinaryOperation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$TransformOperation.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$TransformOperation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$UnaryOperation.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result$UnaryOperation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Result.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/ResultSingle.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/ResultSingle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Table.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/Table.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/TableRow.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/TableRow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/AliasedSelItemC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/AliasedSelItemC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/AscOrderC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/AscOrderC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExpr$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExpr$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExpr.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExpr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprAddC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprAddC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprDivC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprDivC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprModC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprModC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprMulC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprMulC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprNegC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprNegC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprSubC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BasicExprSubC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExpr$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExpr$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExpr.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExpr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprBasicExprC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprBasicExprC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprCmpC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprCmpC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprRegExpC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/BoolExprRegExpC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExpr$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExpr$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExpr.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExpr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprAndC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprAndC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprBoolExprC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprBoolExprC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprNotC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprNotC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprOrC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/CondExprOrC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/DescOrderC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/DescOrderC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EBoolC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EBoolC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ECondExprC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ECondExprC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EDblC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EDblC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EFunC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EFunC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EIdentC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EIdentC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EIntC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EIntC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EStmtC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EStmtC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EStrC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/EStrC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListCondExpr.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListCondExpr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListOrderItem.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListOrderItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListSelItem.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListSelItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListStatement.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ListStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoNullsC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoNullsC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoOrderByC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoOrderByC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoOrderC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoOrderC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoWhereC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NoWhereC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NullFirstsC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NullFirstsC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Nulls$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Nulls$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Nulls.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Nulls.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NullsLastC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/NullsLastC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Order$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Order$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Order.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderBy$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderBy$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderBy.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderBy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderByC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderByC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItem$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItem$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItem.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItemC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/OrderItemC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Program$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Program$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Program.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Program.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ProgramC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/ProgramC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOp$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOp$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOp.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpEqC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpEqC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpGeC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpGeC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpGtC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpGtC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpLeC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpLeC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpLtC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpLtC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpNeC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/RelOpNeC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItem$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItem$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItem.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItemC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItemC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Statement$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Statement$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Statement.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Statement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/StatementC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/StatementC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Where$Visitor.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Where$Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Where.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/Where.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/WhereC.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/WhereC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/CUP$parser$actions.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/CUP$parser$actions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/PrettyPrinter.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/PrettyPrinter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Test.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Yylex.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/Yylex.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/parser.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/parser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/sym.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/interpreter/query/sym.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Attribute.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Attribute.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/AttributesMap.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/AttributesMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/IncompatibleTypesException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/IncompatibleTypesException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/PathName.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/PathName.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Type$PrimaryType.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Type$PrimaryType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Type.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Type.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypeCollection$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypeCollection$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypeCollection.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypeCollection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypePrimitive$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypePrimitive$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypePrimitive.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/TypePrimitive.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/UnsupportedConversionException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/UnsupportedConversionException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/UnsupportedValueOperationException.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/UnsupportedValueOperationException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Value$Operation.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Value$Operation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Value.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/Value.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueBoolean$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueBoolean$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueBoolean.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueBoolean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueContact$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueContact$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueContact.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueContact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDouble$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDouble$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDouble.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDouble.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDuration$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDuration$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDuration.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueDuration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueInt$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueInt$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueInt.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueInt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueList$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueList.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueNull$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueNull$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueNull.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueNull.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSet$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSet.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSimple.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueSimple.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueString$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueString$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueString.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueString.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueTime$1.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueTime$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueTime.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ValueTime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ZMI.class" afterPath="$PROJECT_DIR$/target/classes/pl/edu/mimuw/cloudatlas/model/ZMI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloudatlas1.iml" afterPath="$PROJECT_DIR$/cloudatlas1.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/PathName.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/PathName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Type.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Type.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +207,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="QueryExecutor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryExecutor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -44,8 +220,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="716">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,54 +229,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Attribute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java">
+      <file leaf-file-name="RequestExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/RequestExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-              <folding>
-                <element signature="e#2445#2446#0" expanded="true" />
-                <element signature="e#2472#2473#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypePrimitive.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Type.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/PathName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Value.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="757">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,21 +241,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZMI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ZMI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AttributesMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java">
+      <file leaf-file-name="PrintZMIController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="36" column="72" lean-forward="true" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
+            <state relative-caret-position="75">
+              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <element signature="e#6464#6648#0" expanded="true" />
+                <element signature="e#6647#6648#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpHandler.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/jdk.httpserver/com/sun/net/httpserver/HttpHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrintAttributeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintAttributeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -131,11 +297,19 @@
       <file leaf-file-name="CloudatlasAgent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="373">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,8 +350,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Result.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/cloudatlasServer/QueryTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/cloudatlasServer/QueryExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/cloudatlasClient/Query.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/interfaceRMI/QueryExecutor.java" />
@@ -207,20 +379,28 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/MachineDescriptionFetcher.java" />
         <option value="$PROJECT_DIR$/tests/query.in" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/fetcher/Fetcher.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueString.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueSimple.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Type.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/PathName.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/HTTPRequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/QueryExecutorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintAttributeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/RequestExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java" />
       </list>
     </option>
   </component>
@@ -258,6 +438,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -308,15 +490,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlasRMI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudatlas1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudatlas1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
               <item name="cloudatlasServer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,16 +499,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="interpreter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudatlas1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudatlas1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cloudatlas1" type="b2602c69:ProjectViewProjectNode" />
@@ -352,8 +516,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,13 +523,17 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4119403" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="SearchEverywhereHistoryKey" value="Type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;At&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java&#10;Clie&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java&#10;Val&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java&#10;Att&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java&#10;ZMI&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Attrib&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.Attribute&#10;pom.xml&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;ValueDur&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueDuration.java" />
+    <property name="SearchEverywhereHistoryKey" value="ZMI'&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;ZMI&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;At&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java&#10;Clie&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java&#10;Val&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java&#10;Att&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java&#10;Attrib&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.Attribute&#10;pom.xml&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;ValueDur&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueDuration.java" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build/Server/build" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.edu.mimuw.cloudatlas.controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/cloudatlasRMI" />
       <recent name="$PROJECT_DIR$" />
@@ -584,62 +750,53 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7990244" sideWeight="0.1256656" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7990244" sideWeight="0.1256656" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49490538" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30146343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39512196" sideWeight="0.8743344" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50439024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69365853" sideWeight="0.8743344" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2657082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33073172" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50634146" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5050946" order="7" side_tool="true" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7990244" sideWeight="0.1256656" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7990244" sideWeight="0.1256656" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49490538" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42439026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33073172" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47902438" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19222577" sideWeight="0.5050946" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39512196" sideWeight="0.8743344" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26357827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5050946" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30146343" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39512196" sideWeight="0.8743344" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -685,159 +842,72 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java</url>
-          <line>70</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java</url>
-          <line>142</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java</url>
-          <line>168</line>
+          <line>171</line>
           <properties />
           <option name="timeStamp" value="94" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/RequestExecutor.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="111" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="t.getRequestBody()" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/14.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/query/Absyn/SelItemC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="104" lean-forward="false" selection-start-line="7" selection-start-column="104" selection-end-line="7" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueNull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/13.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="e#2370#2378#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/12.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/12.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueDuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="161" column="19" lean-forward="false" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="19" />
-          <folding>
-            <element signature="e#5261#5262#0" expanded="true" />
-            <element signature="e#5294#5295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/2.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/3.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/3.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/4.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/QueryResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/ResultSingle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="71" column="68" lean-forward="false" selection-start-line="71" selection-start-column="68" selection-end-line="71" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -858,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47475">
           <caret line="3255" column="58" lean-forward="false" selection-start-line="3255" selection-start-column="58" selection-end-line="3255" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3495">
           <caret line="277" column="22" lean-forward="false" selection-start-line="277" selection-start-column="22" selection-end-line="277" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,22 +1024,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Interpreter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="304" column="0" lean-forward="false" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+        <state relative-caret-position="269">
+          <caret line="316" column="64" lean-forward="false" selection-start-line="316" selection-start-column="64" selection-end-line="316" selection-end-column="64" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6268#6281#0" expanded="true" />
-            <element signature="e#7373#7386#0" expanded="true" />
-            <element signature="e#17598#17606#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6268#6281#0" expanded="false" />
+            <element signature="e#7373#7386#0" expanded="false" />
+            <element signature="e#17598#17606#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,8 +1061,8 @@
         <state relative-caret-position="135">
           <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding>
-            <element signature="e#2048#2049#0" expanded="true" />
-            <element signature="e#2062#2063#0" expanded="true" />
+            <element signature="e#2048#2049#0" expanded="false" />
+            <element signature="e#2062#2063#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1022,8 +1072,8 @@
         <state relative-caret-position="330">
           <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding>
-            <element signature="e#1835#1836#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1835#1836#0" expanded="false" />
+            <element signature="e#1859#1860#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1048,45 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="68" lean-forward="true" selection-start-line="0" selection-start-column="68" selection-end-line="0" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="163" column="20" lean-forward="true" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6398#6582#0" expanded="true" />
-            <element signature="e#6581#6582#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,34 +1109,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-          <folding>
-            <element signature="e#2445#2446#0" expanded="true" />
-            <element signature="e#2472#2473#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,10 +1141,193 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/serializer/SerializerZMI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/serializer/ValueSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/jdk.httpserver/com/sun/net/httpserver/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/esotericsoftware/kryo/4.0.0/kryo-4.0.0.jar!/com/esotericsoftware/kryo/io/Output.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/module/ModuleDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="2505" column="35" lean-forward="false" selection-start-line="2505" selection-start-column="35" selection-end-line="2505" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/OutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/QueryExecutorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/jdk.httpserver/com/sun/net/httpserver/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/CloudatlasAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#6464#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/RequestExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintAttributeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/PrintZMIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
           <folding />
         </state>
       </provider>

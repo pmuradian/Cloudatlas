@@ -39,7 +39,7 @@ public class ZMI implements Cloneable, Serializable {
 	private final AttributesMap attributes = new AttributesMap();
 	
 	private final List<ZMI> sons = new ArrayList<ZMI>();
-	private ZMI father;
+	transient private ZMI father;
 	
 	/**
 	 * Creates a new ZMI with no father (the root zone) and empty sons list.

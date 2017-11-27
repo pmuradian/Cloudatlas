@@ -35,6 +35,8 @@ import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.util.*;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import pl.edu.mimuw.cloudatlas.interpreter.fetcher.Fetcher;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
@@ -45,6 +47,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
+
 		String filepath = "tests/query.in";
 		if (args.length > 0) {
 			filepath = args[0];
