@@ -34,7 +34,7 @@ import pl.edu.mimuw.cloudatlas.model.ValueNull;
 class Environment {
 	private final TableRow row;
 	private final Map<String, Integer> columns = new HashMap<String, Integer>();
-	static Stack aggregationFunctions = new Stack<String>();
+	public Stack aggregationFunctions = new Stack<String>();
 
 	public Environment(TableRow row, List<String> columns) {
 		this.row = row;

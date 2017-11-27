@@ -28,6 +28,10 @@ import java.io.ByteArrayInputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.util.*;
 
@@ -41,13 +45,43 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
+		String filepath = "tests/query.in";
+		if (args.length > 0) {
+			filepath = args[0];
+		}
+		initializeFromFile(filepath);
+//		System.out.println(root.sonForPath("/uw/violet07"));
 //		Fetcher fetcher = new Fetcher("/uw/violet07");
 //		fetcher.startFetching();
 //		Scanner scanner = new Scanner(System.in);
 //		scanner.useDelimiter("\\n");
 //		while(scanner.hasNext())
-		executeQueries(root, "SELECT avg(cpu_usage * to_double(num_cores)) AS cpu_load, sum(num_cores) AS num_cores");
+//		executeQueries(root, "SELECT first(99, name) AS new_contacts ORDER BY cpu_usage DESC NULLS LAST, num_cores ASC NULLS FIRST");
 //		scanner.close();
+
+	}
+
+	public static void initializeHierarchy() throws Exception {
+		root = createTestHierarchy();
+	}
+
+	// Will start interpreter with the queries in file, will intall queries to the root node
+	private static void initializeFromFile(String path) {
+		try {
+			List<String> lines = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
+			for (String line: lines) {
+
+				String[] splitString = line.split(":");
+				if (splitString.length != 2) {
+					System.out.println("Input error");
+				}
+				else {
+					installQuery(root, splitString[0], splitString[1].split(";"));
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	private static PathName getPathName(ZMI zmi) {
@@ -55,13 +89,31 @@ public class Main {
 		return zmi.getFather() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
 	}
 
-	public static void updateZMIAttributes(String ZMIName, Map<String, Object> attributeMap) {
-		System.out.println(attributeMap);
-		System.out.println(ZMIName);
+	public static void updateZMIAttributes(String zmiPath, Map<String, Object> attributeMap) {
+		ZMI zmi = root.sonForPath(zmiPath);
+		if (zmi != null) {
+			zmi.getAttributes().addOrChange("cpu_load", new ValueDouble((Double) attributeMap.get("cpu_load")));
+			zmi.getAttributes().addOrChange("free_ram", new ValueInt((Long) attributeMap.get("free_ram")));
+			zmi.getAttributes().addOrChange("total_ram", new ValueInt((Long) attributeMap.get("total_ram")));
+			zmi.getAttributes().addOrChange("free_disk", new ValueInt((Long) attributeMap.get("free_disk")));
+			zmi.getAttributes().addOrChange("total_disk", new ValueInt((Long) attributeMap.get("total_disk")));
+			zmi.getAttributes().addOrChange("free_swap", new ValueInt((Long) attributeMap.get("free_swap")));
+			zmi.getAttributes().addOrChange("total_swap", new ValueInt((Long) attributeMap.get("total_swap")));
+			zmi.getAttributes().addOrChange("num_processess", new ValueInt((Long) attributeMap.get("num_processess")));
+			zmi.getAttributes().addOrChange("kernel_version", new ValueString((String) attributeMap.get("kernel_version")));
+			zmi.getAttributes().addOrChange("logged_users", new ValueInt((Long) attributeMap.get("free_swap")));
+			Iterator<String> i = ((List<String>) attributeMap.get("dns_names")).iterator();
+			ValueList dnsNames = new ValueList(TypePrimitive.STRING);
+			while (i.hasNext()) {
+				dnsNames.add(new ValueString(i.next()));
+			}
+			zmi.getAttributes().addOrChange("dns_names", dnsNames);
+		}
 
+		System.out.println("Attributes for " + zmiPath + " were updated by Fetcher");
 	}
 	
-	public static HashMap<String, Object> executeQueries(ZMI zmi, String query) throws Exception {
+	public static HashMap<String, Value> executeQueries(ZMI zmi, String query) throws Exception {
 		if(!zmi.getSons().isEmpty()) {
 			for(ZMI son : zmi.getSons())
 				executeQueries(son, query);
@@ -83,6 +135,47 @@ public class Main {
 			}
 		}
 		return null;
+	}
+
+	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
+
+	public static void installQuery(ZMI zmi, String attributeName, String[] queries) {
+		ValueList queryValues = new ValueList(TypePrimitive.STRING);
+		for (String query: queries) {
+			try {
+				queryValues.add(new ValueString(query));
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		zmi.getAttributes().addOrChange(attributeName, queryValues);
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				for (String query: queries) {
+					try {
+						executeQueries(zmi, query);
+					} catch (Exception e) {
+
+					}
+				}
+			}
+		}, 0, 4000);
+		installedQueryTimers.put(attributeName, timer);
+	}
+
+	public static Boolean uninstallQuery(ZMI zmi, String attributeName) {
+		installedQueryTimers.get(attributeName).cancel();
+		installedQueryTimers.remove(attributeName);
+		zmi.getAttributes().remove(attributeName);
+		System.out.println("Query uninstalled");
+		return true;
+	}
+
+	public static ZMI printZMIAttributes(ZMI zmi) {
+		zmi.printAttributes(System.out);
+		return zmi;
 	}
 	
 	private static ValueContact createContact(String path, byte ip1, byte ip2, byte ip3, byte ip4)

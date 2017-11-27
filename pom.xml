@@ -29,10 +29,11 @@
             <version>0.5.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.esotericsoftware/kryo -->
         <dependency>
             <groupId>com.esotericsoftware</groupId>
             <artifactId>kryo</artifactId>
-            <version>4.0.1</version>
+            <version>4.0.0</version>
         </dependency>
 
     </dependencies>

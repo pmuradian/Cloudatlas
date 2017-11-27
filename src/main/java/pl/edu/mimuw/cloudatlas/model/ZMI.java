@@ -133,6 +133,22 @@ public class ZMI implements Cloneable {
 		for(ZMI son : sons)
 			son.printAttributes(stream);
 	}
+
+	public ZMI sonForPath(String path) {
+		String name = ((ValueString)this.attributes.getOrNull("name")).getValue();
+		name = name == null ? "/" : name;
+		if (name.equals(path)) {
+			return this;
+		}
+
+		for (ZMI son: getSons()) {
+			ZMI zmi = son.sonForPath(path.substring(path.indexOf("/") + 1, path.length()));
+			if (zmi != null) {
+				return zmi;
+			}
+		}
+		return null;
+	}
 	
 	/**
 	 * Creates an independent copy of a whole hierarchy. A returned ZMI has the same reference as a father (but the

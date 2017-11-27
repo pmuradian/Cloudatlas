@@ -1,0 +1,3 @@
+&attr1: SELECT 2 + 2 AS two_plus_two; SELECT 5 + 2 AS five_plus_two;
+&attr2: SELECT count(num_cores - size(some_names)) AS sth; SELECT avg(cpu_usage * to_double(num_cores)) AS cpu_load, sum(num_cores) AS num_cores;
+&attr3: SELECT floor(5.0 / 1.9) AS fl; SELECT to_integer((to_double(3) - 5.6) / 11.0 + to_double(47 * (31 - 15))) AS math WHERE true;

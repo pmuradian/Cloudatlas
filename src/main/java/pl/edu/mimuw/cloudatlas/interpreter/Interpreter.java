@@ -277,18 +277,28 @@ public class Interpreter {
 		public QueryResult visit(SelItemC selItem, Table table) {
 			ValueList results = null;
 			Iterator<TableRow> iterator = table.iterator();
+			Environment env = null;
 			while (iterator.hasNext()) {
-				Environment env = new Environment(iterator.next(), table.getColumns());
+				env = new Environment(iterator.next(), table.getColumns());
 				Result result = selItem.condexpr_.accept(new CondExprInterpreter(), env);
 				if (results == null) {
 					results = new ValueList(result.getType());
 				}
 				results.add(result.getValue());
 			}
-			for (Value value: results) {
-//				value.addValue()
+			if (results == null) {
+				return new QueryResult(ValueNull.getInstance());
 			}
-			return new QueryResult(results);
+			ResultSingle finalResult = new ResultSingle(results);
+
+			if (env.aggregationFunctions.isEmpty()) {
+				return new QueryResult(results.get(0));
+			}
+
+			List arguments = new ArrayList<Result>();
+			arguments.add(finalResult);
+			Result aggregatedResult = Functions.getInstance().evaluate((String) env.aggregationFunctions.pop(), arguments);
+			return new QueryResult(aggregatedResult.getValue());
 		}
 
 		public QueryResult visit(AliasedSelItemC selItem, Table table) {
@@ -303,7 +313,16 @@ public class Interpreter {
 				}
 				results.add(result.getValue());
 			}
+			if (results == null) {
+				return new QueryResult(ValueNull.getInstance());
+			}
+
 			ResultSingle finalResult = new ResultSingle(results);
+
+			if (env.aggregationFunctions.isEmpty()) {
+				return new QueryResult(new Attribute(selItem.qident_), results.get(0));
+			}
+
 			List arguments = new ArrayList<Result>();
 			arguments.add(finalResult);
 			Result aggregatedResult = Functions.getInstance().evaluate((String) env.aggregationFunctions.pop(), arguments);
@@ -439,7 +458,10 @@ public class Interpreter {
 				for(CondExpr arg : expr.listcondexpr_)
 					arguments.add(arg.accept(new CondExprInterpreter(), env));
 
-				env.aggregationFunctions.push(expr.qident_);
+				if (Functions.getInstance().isAggregationFunction(expr.qident_)) {
+					env.aggregationFunctions.push(expr.qident_);
+				}
+
 				return Functions.getInstance().evaluate(expr.qident_, arguments);
 			} catch(Exception exception) {
 				throw new InsideQueryException(PrettyPrinter.print(expr), exception);

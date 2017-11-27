@@ -20,7 +20,7 @@ public class Server {
             System.setSecurityManager(new SecurityManager());
         }
         try {
-            Main.main(null);
+            Main.initializeHierarchy();
 
             System.out.println("Starting Server");
 
@@ -38,12 +38,8 @@ public class Server {
             registry.rebind(QueryExecutor.class.getName(), stub);
             System.out.println("Agent bound");
         } catch (Exception e) {
-            System.err.println("ComputeEngine exception:");
+            System.err.println("QueryExecutor exception:");
             e.printStackTrace();
         }
-    }
-
-    public String adf() {
-        return "asdf";
     }
 }

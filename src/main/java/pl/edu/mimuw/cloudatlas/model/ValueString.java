@@ -46,6 +46,10 @@ public class ValueString extends ValueSimple<String> {
 	public ValueString(String value) {
 		super(value);
 	}
+
+	public ValueString() {
+		super();
+	}
 	
 	@Override
 	public Type getType() {

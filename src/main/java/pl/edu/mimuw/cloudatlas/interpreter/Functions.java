@@ -458,4 +458,18 @@ class Functions {
 		}
 		throw new IllegalArgumentException("Illegal number of arguments.");
 	}
+
+	public Boolean isAggregationFunction(String name) {
+		switch (name) {
+			case "count": return true;
+			case "sum":   return true;
+			case "avg":   return true;
+			case "land":  return true;
+			case "lor":   return true;
+			case "min":   return true;
+			case "max":   return true;
+			case "first": return true;
+			default:      return false;
+		}
+	}
 }

@@ -23,9 +23,9 @@ public class Fetcher {
     private Integer averagingPeriod = 5000;
 
     private Double averageCPULoad = 0.0;
-    private Integer cycleCount = 0;
     private Timer fetchingTimer = new Timer();
     private Timer averagingTimer = new Timer();
+    private List<Double> cpuData = new ArrayList<>();
     MachineDescriptionFetcher fetcher;
 
     public static void main(String[] args) {
@@ -68,6 +68,7 @@ public class Fetcher {
     public Fetcher(String ZMIName, Integer feedInterval, Integer averagingPeriod) {
         this.ZMIName = ZMIName;
         this.feedInterval = feedInterval;
+        this.averagingPeriod = averagingPeriod;
     }
 
     public void startFetching() {
@@ -84,22 +85,12 @@ public class Fetcher {
         averagingTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                countAverageCPULoad();
+                averageCPULoad = countAverageCPULoad();
             }
         }, 0, averagingPeriod);
     }
 
-    public Map<String, Object> readData() {
-        cycleCount++;
-        System.out.println(cycleCount);
-        try {
-            averageCPULoad += CPULoad() / cycleCount;
-            System.out.println(averageCPULoad);
-        } catch (Exception e) {
-            System.out.println("CPULoad exception");
-        }
-        System.out.println(">>>>>>Data fetched<<<<<<");
-
+    private Map<String, Object> readData() {
         HashMap attributeMap = new HashMap<String, Object>();
         attributeMap.put("cpu_load", averageCPULoad);
         attributeMap.put("free_ram", this.freeRAM());
@@ -117,16 +108,23 @@ public class Fetcher {
         return attributeMap;
     }
 
-    public void countAverageCPULoad() {
+    private Double countAverageCPULoad() {
         System.out.println("average counted");
+        Double sum = 0d;
+        for (Double value: cpuData) {
+            sum += value;
+        }
+        return sum == 0d ? 0d: sum / 2;
     }
 
     public Double CPULoad() throws Exception {
-        return (((com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean()).getSystemCpuLoad() * 10);
+        Double newData = (((com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean()).getSystemCpuLoad() * 10);
+        this.cpuData.add(newData);
+        return newData;
     }
 
-    public Integer CPUCoreCount() {
-        return Runtime.getRuntime().availableProcessors();
+    public Long CPUCoreCount() {
+        return new Long(Runtime.getRuntime().availableProcessors());
     }
 
     public Long freeDiskSpace() {
@@ -153,17 +151,17 @@ public class Fetcher {
         return ((com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean()).getTotalSwapSpaceSize();
     }
 
-    public Integer activeProcessesCount() {
+    public Long activeProcessesCount() {
         try {
             String line;
             Process p = Runtime.getRuntime().exec("ps -e");
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
             int processCount = 0;
-            while ((line = input.readLine()) != null) {
+            while (input.readLine() != null) {
                 processCount++;
             }
             input.close();
-            return processCount;
+            return (long) processCount;
         } catch (Exception err) {
             err.printStackTrace();
             return null;
@@ -174,11 +172,11 @@ public class Fetcher {
         return System.getProperty("os.version");
     }
 
-    public Integer loggedUsersCount() {
-        return 1;
+    public Long loggedUsersCount() {
+        return 1l;
     }
 
     public ArrayList<String> DNSNames() {
-        return new ArrayList<String>(Arrays.asList("a", "b", "c"));
+        return new ArrayList<String>(Arrays.asList("dns1", "dns2", "dns3"));
     }
 }

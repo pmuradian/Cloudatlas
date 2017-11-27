@@ -42,6 +42,10 @@ abstract class ValueSimple<T> extends Value {
 	public ValueSimple(T value) {
 		setValue(value);
 	}
+
+	public ValueSimple() {
+		this.value = null;
+	}
 	
 	/**
 	 * Returns a hash code value for this object. This is a hash code of underlying wrapped object.
