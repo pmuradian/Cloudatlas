@@ -11,6 +11,6 @@ public interface QueryExecutor extends Remote {
     HashMap<String, Value> execute(String query) throws RemoteException;
     String installQuery(String attributeName, String[] queries) throws RemoteException;
     String uninstallQuery(String attributeName) throws RemoteException;
-    byte[] attributeValue(String zmiPath, String attributeName) throws RemoteException;
-    byte[] printAttributes(String zmiPath) throws RemoteException;
+    Value attributeValue(String zmiPath, String attributeName) throws RemoteException;
+    ZMI printAttributes(String zmiPath) throws RemoteException;
 }

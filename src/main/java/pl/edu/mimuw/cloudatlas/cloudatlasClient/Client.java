@@ -42,7 +42,8 @@ public class Client {
             Scanner scanner = new Scanner(System.in);
             scanner.useDelimiter("\\n");
 
-//            requestAttribute("/uw/violet07", "name");
+            requestAttribute("/uw/violet07", "num_cores");
+            requestZMI("/uw/violet07");
 //            executeQuery("SELECT 2 + 2 AS two_plus_two");
 
             while(scanner.hasNext()) {
@@ -105,15 +106,17 @@ public class Client {
     }
 
     private static void requestAttribute(String zmiPath, String attributeName) throws RemoteException {
-        Kryo kryo =  new Kryo();
-        Value value = kryo.readObject(new Input(new ByteArrayInputStream(executor.attributeValue(zmiPath, attributeName))), Value.class);
-        System.out.println(value);
+        System.out.println(executor.attributeValue(zmiPath, attributeName));
+//        Kryo kryo =  new Kryo();
+//        Value value = kryo.readObject(new Input(new ByteArrayInputStream(executor.attributeValue(zmiPath, attributeName))), Value.class);
+//        System.out.println(value);
     }
 
     private static void requestZMI(String path) throws RemoteException {
-        Kryo kryo =  new Kryo();
-        ZMI zmi = kryo.readObject(new Input(new ByteArrayInputStream(executor.printAttributes(path))), ZMI.class);
-        zmi.printAttributes(System.out);
+        System.out.println(executor.printAttributes(path));
+//        Kryo kryo =  new Kryo();
+//        ZMI zmi = kryo.readObject(new Input(new ByteArrayInputStream(executor.printAttributes(path))), ZMI.class);
+//        zmi.printAttributes(System.out);
     }
 
     private static void executeQuery(String query) throws RemoteException {
