@@ -54,16 +54,8 @@ public class CloudatlasAgent implements QueryExecutor {
     }
 
     @Override
-    public Value attributeValue(String zmiPath, String attributeName) throws RemoteException {
+    public Value getAttributeValue(String zmiPath, String attributeName) throws RemoteException {
         try {
-//            Value value = Main.root.sonForPath(zmiPath).getAttributes().get(attributeName);
-//            Kryo kryo = new Kryo();
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            Output output = new Output(stream);
-//            kryo.writeObject(output, value);
-//            output.close();
-//            byte[] buffer = stream.toByteArray();
-//            return buffer;
             return Main.root.sonForPath(zmiPath).getAttributes().get(attributeName);
         } catch (Exception e) {
             System.err.println("Server exception:");
@@ -73,16 +65,9 @@ public class CloudatlasAgent implements QueryExecutor {
     }
 
     @Override
-    public ZMI printAttributes(String zmiPath) throws RemoteException {
+    public ZMI getAttributes(String zmiPath) throws RemoteException {
         try {
             return Main.printZMIAttributes(Main.root.sonForPath(zmiPath));
-//            Kryo kryo = new Kryo();
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            Output output = new Output(stream);
-//            kryo.writeObject(output, zmi);
-//            output.close();
-//            byte[] buffer = stream.toByteArray();
-//            return buffer;
         } catch (Exception e) {
             System.err.println("Server exception:");
             e.printStackTrace();

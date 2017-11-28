@@ -1,25 +1,31 @@
 package pl.edu.mimuw.cloudatlas.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import pl.edu.mimuw.cloudatlas.Helpers.Helpers;
 import pl.edu.mimuw.cloudatlas.cloudatlasClient.RequestExecutor;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 
 public class QueryExecutorController implements HttpHandler {
+
+    // Takes as an input a query (example SELECT 2 + 2 AS two_plus_two)
+    // Returns result of the query performed on all but singleton ZMIs
     public void handle(HttpExchange t) throws IOException {
         InputStream is = t.getRequestBody();
-        byte[] body = new byte[100];
-        is.read(body);
-
-        String response = new String(body, StandardCharsets.UTF_8);
+        HashMap result = RequestExecutor.executeQuery(Helpers.convertStreamToString(is));;
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        String response = gson.toJson(result);
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());
         os.close();
-        RequestExecutor.executeQuery("");
     }
 }

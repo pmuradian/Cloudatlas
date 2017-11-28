@@ -120,6 +120,13 @@ public class ZMI implements Cloneable, Serializable {
 	public AttributesMap getAttributes() {
 		return attributes;
 	}
+
+	public void removeAttribute(String attributeName) {
+		for (ZMI son: sons) {
+			son.removeAttribute(attributeName);
+		}
+		this.attributes.remove(attributeName);
+	}
 	
 	/**
 	 * Prints recursively in a prefix order (starting from this ZMI) a whole tree with all the attributes.

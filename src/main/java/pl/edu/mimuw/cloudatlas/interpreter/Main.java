@@ -48,20 +48,12 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
 
+		executeQueries(root, "SELECT sum(num_cores) AS number");
 		String filepath = "tests/query.in";
 		if (args.length > 0) {
 			filepath = args[0];
 		}
 		initializeFromFile(filepath);
-//		System.out.println(root.sonForPath("/uw/violet07"));
-//		Fetcher fetcher = new Fetcher("/uw/violet07");
-//		fetcher.startFetching();
-//		Scanner scanner = new Scanner(System.in);
-//		scanner.useDelimiter("\\n");
-//		while(scanner.hasNext())
-//		executeQueries(root, "SELECT first(99, name) AS new_contacts ORDER BY cpu_usage DESC NULLS LAST, num_cores ASC NULLS FIRST");
-//		scanner.close();
-
 	}
 
 	public static void initializeHierarchy() throws Exception {
@@ -118,18 +110,22 @@ public class Main {
 	
 	public static HashMap<String, Value> executeQueries(ZMI zmi, String query) throws Exception {
 		if(!zmi.getSons().isEmpty()) {
-			for(ZMI son : zmi.getSons())
-				executeQueries(son, query);
+			HashMap attributeMap = new HashMap<Attribute, Value>();
+			for(ZMI son : zmi.getSons()) {
+				HashMap<String, Value> sonResult = executeQueries(son, query);
+				if (sonResult != null) {
+					attributeMap.putAll(sonResult);
+				}
+			}
 
 			Interpreter interpreter = new Interpreter(zmi);
 			Yylex lex = new Yylex(new ByteArrayInputStream(query.getBytes()));
 			try {
 				List<QueryResult> result = interpreter.interpretProgram((new parser(lex)).pProgram());
 				PathName zone = getPathName(zmi);
-				HashMap attributeMap = new HashMap<Attribute, Value>();
 				for(QueryResult r : result) {
 					System.out.println(zone + ": " + r);
-					attributeMap.put(r.getName(), r.getValue());
+					attributeMap.put(zone + ": " + r.getName(), r.getValue());
 					zmi.getAttributes().addOrChange(r.getName(), r.getValue());
 				}
 				return attributeMap;
@@ -171,7 +167,7 @@ public class Main {
 	public static Boolean uninstallQuery(ZMI zmi, String attributeName) {
 		installedQueryTimers.get(attributeName).cancel();
 		installedQueryTimers.remove(attributeName);
-		zmi.getAttributes().remove(attributeName);
+		zmi.removeAttribute(attributeName);
 		System.out.println("Query uninstalled");
 		return true;
 	}
