@@ -1,14 +1,13 @@
 package pl.edu.mimuw.cloudatlas.cloudatlasServer;
 
+import pl.edu.mimuw.cloudatlas.cloudatlasClient.CloudatlasAgent;
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.MachineDescriptionFetcher;
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.QueryExecutor;
+import pl.edu.mimuw.cloudatlas.fetcher.FetcherAgent;
 import pl.edu.mimuw.cloudatlas.interpreter.Main;
-
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Map;
 
 public class Server {
     public Server() {

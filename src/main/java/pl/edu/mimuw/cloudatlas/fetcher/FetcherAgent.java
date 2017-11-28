@@ -1,4 +1,4 @@
-package pl.edu.mimuw.cloudatlas.cloudatlasServer;
+package pl.edu.mimuw.cloudatlas.fetcher;
 
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.MachineDescriptionFetcher;
 import pl.edu.mimuw.cloudatlas.interpreter.Main;

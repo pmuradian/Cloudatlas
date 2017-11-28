@@ -1,4 +1,4 @@
-package pl.edu.mimuw.cloudatlas.cloudatlasServer;
+package pl.edu.mimuw.cloudatlas.cloudatlasClient;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Output;
@@ -39,13 +39,7 @@ public class CloudatlasAgent implements QueryExecutor {
     @Override
     public String uninstallQuery(String attributeName) throws RemoteException {
         try {
-            if (Main.uninstallQuery(Main.root, attributeName)) {
-                System.out.println("Query uninstalled");
-                return "Query uninstalled";
-            }
-            else {
-                // TODO: handle error
-            }
+            return Main.uninstallQuery(Main.root, attributeName);
         } catch (Exception e) {
             System.err.println("Server exception:");
             e.printStackTrace();

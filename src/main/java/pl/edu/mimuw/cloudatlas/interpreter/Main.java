@@ -25,30 +25,24 @@
 package pl.edu.mimuw.cloudatlas.interpreter;
 
 import java.io.ByteArrayInputStream;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.util.*;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import pl.edu.mimuw.cloudatlas.interpreter.fetcher.Fetcher;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
 import pl.edu.mimuw.cloudatlas.model.*;
 
 public class Main {
 	public static ZMI root;
+	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
 	
 	public static void main(String[] args) throws Exception {
 		root = createTestHierarchy();
 
-		executeQueries(root, "SELECT sum(num_cores) AS number");
 		String filepath = "tests/query.in";
 		if (args.length > 0) {
 			filepath = args[0];
@@ -60,7 +54,7 @@ public class Main {
 		root = createTestHierarchy();
 	}
 
-	// Will start interpreter with the queries in file, will intall queries to the root node
+	// Will start interpreter with the queries in file, will install queries to the root node
 	private static void initializeFromFile(String path) {
 		try {
 			List<String> lines = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
@@ -131,12 +125,13 @@ public class Main {
 				return attributeMap;
 			} catch(InterpreterException exception) {
 				System.out.println(exception.getMessage());
+				attributeMap.clear();
+				attributeMap.put("Error in ZMI " + getPathName(zmi) + ":", new ValueString(exception.getMessage()));
+				return attributeMap;
 			}
 		}
 		return null;
 	}
-
-	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
 
 	public static void installQuery(ZMI zmi, String attributeName, String[] queries) {
 		ValueList queryValues = new ValueList(TypePrimitive.STRING);
@@ -164,12 +159,16 @@ public class Main {
 		installedQueryTimers.put(attributeName, timer);
 	}
 
-	public static Boolean uninstallQuery(ZMI zmi, String attributeName) {
-		installedQueryTimers.get(attributeName).cancel();
+	public static String uninstallQuery(ZMI zmi, String attributeName) {
+		Timer timer = installedQueryTimers.get(attributeName);
+		if (timer == null) {
+			return "No such attribute";
+		}
+		timer.cancel();
 		installedQueryTimers.remove(attributeName);
 		zmi.removeAttribute(attributeName);
 		System.out.println("Query uninstalled");
-		return true;
+		return "Attribute " + attributeName + " was removed";
 	}
 
 	public static ZMI printZMIAttributes(ZMI zmi) {
@@ -196,28 +195,16 @@ public class Main {
 		root = new ZMI();
 		root.getAttributes().add("level", new ValueInt(0l));
 		root.getAttributes().add("name", new ValueString(null));
-//		root.getAttributes().add("owner", new ValueString("/uw/violet07"));
-//		root.getAttributes().add("timestamp", new ValueTime("2012/11/09 20:10:17.342"));
-//		root.getAttributes().add("contacts", new ValueSet(TypePrimitive.CONTACT));
-//		root.getAttributes().add("cardinality", new ValueInt(0l));
 		
 		ZMI uw = new ZMI(root);
 		root.addSon(uw);
 		uw.getAttributes().add("level", new ValueInt(1l));
 		uw.getAttributes().add("name", new ValueString("uw"));
-//		uw.getAttributes().add("owner", new ValueString("/uw/violet07"));
-//		uw.getAttributes().add("timestamp", new ValueTime("2012/11/09 20:8:13.123"));
-//		uw.getAttributes().add("contacts", new ValueSet(TypePrimitive.CONTACT));
-//		uw.getAttributes().add("cardinality", new ValueInt(0l));
 		
 		ZMI pjwstk = new ZMI(root);
 		root.addSon(pjwstk);
 		pjwstk.getAttributes().add("level", new ValueInt(1l));
 		pjwstk.getAttributes().add("name", new ValueString("pjwstk"));
-//		pjwstk.getAttributes().add("owner", new ValueString("/pjwstk/whatever01"));
-//		pjwstk.getAttributes().add("timestamp", new ValueTime("2012/11/09 20:8:13.123"));
-//		pjwstk.getAttributes().add("contacts", new ValueSet(TypePrimitive.CONTACT));
-//		pjwstk.getAttributes().add("cardinality", new ValueInt(0l));
 		
 		ZMI violet07 = new ZMI(uw);
 		uw.addSon(violet07);

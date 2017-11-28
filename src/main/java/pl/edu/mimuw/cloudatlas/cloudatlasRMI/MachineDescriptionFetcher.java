@@ -5,5 +5,5 @@ import java.rmi.RemoteException;
 import java.util.Map;
 
 public interface MachineDescriptionFetcher extends Remote {
-    public void updateZMIAttributes(String zmiName, Map<String, Object> attributeMap) throws RemoteException;
+    void updateZMIAttributes(String zmiName, Map<String, Object> attributeMap) throws RemoteException;
 }

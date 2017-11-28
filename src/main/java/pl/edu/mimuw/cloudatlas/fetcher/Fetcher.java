@@ -1,9 +1,8 @@
-package pl.edu.mimuw.cloudatlas.interpreter.fetcher;
+package pl.edu.mimuw.cloudatlas.fetcher;
 
 import org.ini4j.Ini;
 import org.ini4j.IniPreferences;
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.MachineDescriptionFetcher;
-import pl.edu.mimuw.cloudatlas.cloudatlasRMI.QueryExecutor;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,6 +56,7 @@ public class Fetcher {
             System.setSecurityManager(new SecurityManager());
         }
         try {
+            System.out.println("Fetcher is running");
             Registry registry = LocateRegistry.getRegistry();
             this.fetcher = (MachineDescriptionFetcher) registry.lookup(MachineDescriptionFetcher.class.getName());
         } catch (Exception e) {
@@ -76,9 +76,12 @@ public class Fetcher {
             @Override
             public void run() {
                 try {
+                    CPULoad();
                     fetcher.updateZMIAttributes(ZMIName, readData());
                 } catch (RemoteException e) {
                     System.out.println(e.getMessage());
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }, 0, feedInterval);
@@ -110,10 +113,11 @@ public class Fetcher {
 
     private Double countAverageCPULoad() {
         System.out.println("average counted");
-        Double sum = 0d;
+        Double sum = averageCPULoad;
         for (Double value: cpuData) {
             sum += value;
         }
+        cpuData.clear();
         return sum == 0d ? 0d: sum / 2;
     }
 
