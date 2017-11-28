@@ -40,12 +40,17 @@ public class Main {
 	public static ZMI root;
 	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
 	
-	public static void main(String[] args) throws Exception {
-		root = createTestHierarchy();
+	public static void main(String[] args) {
+
+		try {
+			root = createTestHierarchy();
+		} catch (ParseException | UnknownHostException e) {
+			e.printStackTrace();
+		}
 
 		String filepath = "tests/query.in";
-		if (args.length > 0) {
-			filepath = args[0];
+		if (args.length > 1) {
+			filepath = args[1];
 		}
 		initializeFromFile(filepath);
 	}

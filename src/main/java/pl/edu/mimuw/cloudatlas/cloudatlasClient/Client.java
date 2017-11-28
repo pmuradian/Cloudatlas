@@ -16,8 +16,8 @@ public class Client {
         }
         try {
             String serverRegistry = "localhost";
-            if (args.length > 0) {
-                serverRegistry = args[0];
+            if (args.length > 1) {
+                serverRegistry = args[1];
             }
 
             startHTTPServer();
