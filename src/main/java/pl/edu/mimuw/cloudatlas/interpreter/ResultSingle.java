@@ -24,10 +24,9 @@
 
 package pl.edu.mimuw.cloudatlas.interpreter;
 
-import pl.edu.mimuw.cloudatlas.model.Type;
-import pl.edu.mimuw.cloudatlas.model.Value;
-import pl.edu.mimuw.cloudatlas.model.ValueBoolean;
-import pl.edu.mimuw.cloudatlas.model.ValueList;
+import pl.edu.mimuw.cloudatlas.model.*;
+
+import java.util.List;
 
 class ResultSingle extends Result {
 	private final Value value;
@@ -79,12 +78,24 @@ class ResultSingle extends Result {
 
 	@Override
 	public Result first(int size) {
-		throw new UnsupportedOperationException("Operation first not supported on ResultSingle.");
+		if (value.getType().getPrimaryType() == Type.PrimaryType.LIST && size < ((ValueList) value).size()) {
+			List<Value> list = ((ValueList) value).getValue().subList(0, size);
+			Type type = list.get(0).getType();
+			return new ResultSingle(new ValueList(list, type));
+		}
+
+		return new ResultSingle(value);
 	}
 
 	@Override
 	public Result last(int size) {
-		throw new UnsupportedOperationException("Operation last not supported on ResultSingle.");
+		if (value.getType().getPrimaryType() == Type.PrimaryType.LIST && size < ((ValueList) value).size()) {
+			List<Value> list = ((ValueList) value).getValue().subList(((ValueList) value).size() - size, ((ValueList) value).size());
+			Type type = list.get(0).getType();
+			return new ResultSingle(new ValueList(list, type));
+		}
+
+		return new ResultSingle(value);
 	}
 
 	@Override

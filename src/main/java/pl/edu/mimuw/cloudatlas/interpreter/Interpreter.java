@@ -296,6 +296,9 @@ public class Interpreter {
 			}
 
 			List arguments = new ArrayList<Result>();
+			if (!env.functionArguments.isEmpty()) {
+				arguments.add(env.functionArguments.pop());
+			}
 			arguments.add(finalResult);
 			Result aggregatedResult = Functions.getInstance().evaluate((String) env.aggregationFunctions.pop(), arguments);
 			return new QueryResult(aggregatedResult.getValue());
@@ -324,6 +327,9 @@ public class Interpreter {
 			}
 
 			List arguments = new ArrayList<Result>();
+			if (!env.functionArguments.isEmpty()) {
+				arguments.add(env.functionArguments.pop());
+			}
 			arguments.add(finalResult);
 			Result aggregatedResult = Functions.getInstance().evaluate((String) env.aggregationFunctions.pop(), arguments);
 			return new QueryResult(new Attribute(selItem.qident_), aggregatedResult.getValue());
@@ -460,6 +466,9 @@ public class Interpreter {
 
 				if (Functions.getInstance().isAggregationFunction(expr.qident_)) {
 					env.aggregationFunctions.push(expr.qident_);
+					if (arguments.size() == 2) {
+						env.functionArguments.push(arguments.get(0));
+					}
 				}
 
 				return Functions.getInstance().evaluate(expr.qident_, arguments);

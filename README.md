@@ -16,3 +16,24 @@ Example: java -Djava.security.policy={pathToPolicyFile} -jar cloudatlas.jar CLIE
 For Interpreter a second argument is a path to the file containing attribute names and queries in format specified in the Assignment 1.
 A policy file is not required to run Interpreter.
 Example: java -jar cloudatlas.jar INTERPRETER pathToFileWithQueries
+
+Available HTTP endpoints
+  localhost:8000/client/install
+  localhost:8000/client/uninstall
+  localhost:8000/client/printZMI
+  localhost:8000/client/printAttribute
+  localhost:8000/client/execute
+
+For information on HTTP request body content see respectively
+  InstallController
+  UninstallController
+  PrintZMIController
+  PrintAttributeController
+  QueryExecutorController
+
+In case the above method to run the program is not working
+1: run rmiregistry from target/classes directory
+2: If intellij idea IDE is present just open the project and run Server, Client, Fetcher or Main configurations
+3: If intellij is not present, run java -Djava.security.policy=client.policy Fetcher
+                                   java -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.cloudatlasClient.Client
+                                   java -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy pl.edu.mimuw.cloudatlas.cloudatlasServer.Server

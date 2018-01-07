@@ -35,6 +35,7 @@ class Environment {
 	private final TableRow row;
 	private final Map<String, Integer> columns = new HashMap<String, Integer>();
 	public Stack aggregationFunctions = new Stack<String>();
+	public Stack functionArguments = new Stack<Result>();
 
 	public Environment(TableRow row, List<String> columns) {
 		this.row = row;

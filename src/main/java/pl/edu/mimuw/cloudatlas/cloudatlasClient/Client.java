@@ -33,7 +33,6 @@ public class Client {
 
     private static void startHTTPServer() throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
-        server.createContext("/client", new InstallController());
         server.createContext("/client/uninstall", new UninstallController());
         server.createContext("/client/install", new InstallController());
         server.createContext("/client/printZMI", new PrintZMIController());

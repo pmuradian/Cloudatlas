@@ -469,6 +469,8 @@ class Functions {
 			case "min":   return true;
 			case "max":   return true;
 			case "first": return true;
+			case "last":  return true;
+			case "random":return true;
 			default:      return false;
 		}
 	}
