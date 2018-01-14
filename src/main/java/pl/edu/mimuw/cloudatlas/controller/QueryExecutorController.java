@@ -19,7 +19,7 @@ public class QueryExecutorController implements HttpHandler {
     // Returns result of the query performed on all but singleton ZMIs
     public void handle(HttpExchange t) throws IOException {
         InputStream is = t.getRequestBody();
-        HashMap result = RequestExecutor.executeQuery(Helpers.convertStreamToString(is));;
+        HashMap result = RequestExecutor.executeQuery(Helpers.convertStreamToString(is));
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String response = gson.toJson(result);

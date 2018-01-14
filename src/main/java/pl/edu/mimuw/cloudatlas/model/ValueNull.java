@@ -81,9 +81,9 @@ public class ValueNull extends Value {
 	}
 	
 	@Override
-	public Value isLowerThan(Value value) {
+	public ValueBoolean isLowerThan(Value value) {
 		if(value == getInstance())
-			return this;
+			return new ValueBoolean(true);
 		return value.isLowerThan(this);
 	}
 	

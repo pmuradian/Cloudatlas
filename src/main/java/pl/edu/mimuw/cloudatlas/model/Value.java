@@ -91,7 +91,15 @@ public abstract class Value implements Serializable {
 	 * @throws UnsupportedValueOperationException if this operator is unsupported for these values (for example
 	 * incompatible or non-numeric types)
 	 */
-	public Value isLowerThan(Value value) {
+	public ValueBoolean isLowerThan(Value value) {
+		throw new UnsupportedValueOperationException(getType(), Operation.COMPARE);
+	}
+
+	public ValueBoolean isLowerOrEqual(Value value) {
+		throw new UnsupportedValueOperationException(getType(), Operation.COMPARE);
+	}
+
+	public ValueBoolean isGreaterOrEqual(Value value) {
 		throw new UnsupportedValueOperationException(getType(), Operation.COMPARE);
 	}
 	

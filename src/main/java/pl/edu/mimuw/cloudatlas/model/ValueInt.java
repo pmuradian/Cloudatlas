@@ -58,6 +58,22 @@ public class ValueInt extends ValueSimple<Long> {
 			return new ValueBoolean(null);
 		return new ValueBoolean(getValue() < ((ValueInt)value).getValue());
 	}
+
+	@Override
+	public ValueBoolean isLowerOrEqual(Value value) {
+		sameTypesOrThrow(value, Operation.COMPARE);
+		if(isNull() || value.isNull())
+			return new ValueBoolean(null);
+		return new ValueBoolean(getValue() <= ((ValueInt)value).getValue());
+	}
+
+	@Override
+	public ValueBoolean isGreaterOrEqual(Value value) {
+		sameTypesOrThrow(value, Operation.COMPARE);
+		if(isNull() || value.isNull())
+			return new ValueBoolean(null);
+		return new ValueBoolean(getValue() >= ((ValueInt)value).getValue());
+	}
 	
 	@Override
 	public ValueInt addValue(Value value) {

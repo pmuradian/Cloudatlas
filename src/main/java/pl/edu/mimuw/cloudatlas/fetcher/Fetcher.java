@@ -102,7 +102,7 @@ public class Fetcher {
         attributeMap.put("total_disk", this.totalDiskSpace());
         attributeMap.put("free_swap", this.freeSwap());
         attributeMap.put("total_swap", this.totalSwap());
-        attributeMap.put("num_processess", this.activeProcessesCount());
+        attributeMap.put("num_processes", this.activeProcessesCount());
         attributeMap.put("num_cores", this.CPUCoreCount());
         attributeMap.put("kernel_version", this.kernelVersion());
         attributeMap.put("logged_users", this.loggedUsersCount());

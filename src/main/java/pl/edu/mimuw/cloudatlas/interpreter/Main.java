@@ -25,6 +25,7 @@
 package pl.edu.mimuw.cloudatlas.interpreter;
 
 import java.io.ByteArrayInputStream;
+import java.lang.reflect.Array;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
@@ -35,9 +36,13 @@ import java.util.*;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
 import pl.edu.mimuw.cloudatlas.model.*;
+import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationClient;
+import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationMessage;
+import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationServer;
 
 public class Main {
 	public static ZMI root;
+	private static ZMI node;
 	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
 	
 	public static void main(String[] args) {
@@ -52,11 +57,66 @@ public class Main {
 		if (args.length > 1) {
 			filepath = args[1];
 		}
-		initializeFromFile(filepath);
+
+		CommunicationServer server = new CommunicationServer();
+//		server.start(9876);
+//		CommunicationClient client = new CommunicationClient();
+//		client.send("asdf", 9876);
+//		initializeFromFile(filepath);
+		startGossiping(GossipType.RandomExpProbability);
 	}
 
 	public static void initializeHierarchy() throws Exception {
 		root = createTestHierarchy();
+	}
+
+	public static void startGossiping(GossipType type) {
+		// Random selection probability for all levels
+		GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
+		ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
+		CommunicationClient client = new CommunicationClient();
+		boolean isConnected = true;//client.connectTo(contact.getName().getSingletonName());
+		if (isConnected) {
+			client.sendZMI(node, contact.getName().getSingletonName());
+		}
+	}
+
+	public static ValueContact selectContact(ArrayList<ZMI> zmis) {
+		ArrayList<ValueContact> contacts = new ArrayList();
+		for (ZMI zmi: zmis) {
+			ValueSet contacts1 = (ValueSet) zmi.getAttributes().getOrNull("contacts");
+			if (contacts1 != null) {
+				for (Value contact : contacts1.getValue())
+					if (contact != null) {
+					contacts.add((ValueContact) contact);
+				}
+			}
+		}
+
+		if (contacts.size() == 0) {
+			try {
+				contacts = getFallbackContacts();
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			}
+		}
+		Integer randomIndex = (new Random()).nextInt(contacts.size());
+		randomIndex = randomIndex > 0 ? randomIndex - 1: randomIndex;
+		return contacts.get(randomIndex);
+	}
+
+	private static ArrayList<ValueContact> getFallbackContacts() throws UnknownHostException {
+		ValueContact violet07Contact = createContact("/uw/violet07", (byte)10, (byte)1, (byte)1, (byte)10);
+		ValueContact khaki13Contact = createContact("/uw/khaki13", (byte)10, (byte)1, (byte)1, (byte)38);
+		ValueContact khaki31Contact = createContact("/uw/khaki31", (byte)10, (byte)1, (byte)1, (byte)39);
+		ValueContact whatever01Contact = createContact("/uw/whatever01", (byte)82, (byte)111, (byte)52, (byte)56);
+		ValueContact whatever02Contact = createContact("/uw/whatever02", (byte)82, (byte)111, (byte)52, (byte)57);
+
+		List list = Arrays.asList(new Value[] {
+				violet07Contact, khaki13Contact, khaki31Contact, whatever01Contact, whatever02Contact
+		});
+
+		return new ArrayList(list);
 	}
 
 	// Will start interpreter with the queries in file, will install queries to the root node
@@ -93,7 +153,7 @@ public class Main {
 			zmi.getAttributes().addOrChange("total_disk", new ValueInt((Long) attributeMap.get("total_disk")));
 			zmi.getAttributes().addOrChange("free_swap", new ValueInt((Long) attributeMap.get("free_swap")));
 			zmi.getAttributes().addOrChange("total_swap", new ValueInt((Long) attributeMap.get("total_swap")));
-			zmi.getAttributes().addOrChange("num_processess", new ValueInt((Long) attributeMap.get("num_processess")));
+			zmi.getAttributes().addOrChange("num_processes", new ValueInt((Long) attributeMap.get("num_processes")));
 			zmi.getAttributes().addOrChange("kernel_version", new ValueString((String) attributeMap.get("kernel_version")));
 			zmi.getAttributes().addOrChange("logged_users", new ValueInt((Long) attributeMap.get("free_swap")));
 			Iterator<String> i = ((List<String>) attributeMap.get("dns_names")).iterator();
@@ -236,6 +296,8 @@ public class Main {
 		});
 		violet07.getAttributes().add("some_names", new ValueList(list, TypePrimitive.STRING));
 		violet07.getAttributes().add("expiry", new ValueDuration(13l, 12l, 0l, 0l, 0l));
+
+		node = violet07;
 		
 		ZMI khaki31 = new ZMI(uw);
 		uw.addSon(khaki31);

@@ -121,6 +121,46 @@ public class ZMI implements Cloneable, Serializable {
 		return attributes;
 	}
 
+	/**
+	 * Gets an array of all son ZMI's with given level.
+	 *
+	 * @return List of ZMI
+	 */
+	public ArrayList<ZMI> getZMIWithLevel(Long level) {
+		if (((ValueBoolean)this.getAttributes().get("level").isEqual(new ValueInt(level))).getValue()) {
+			ArrayList arr = new ArrayList();
+			arr.add(this);
+			return arr;
+		}
+
+		if (!(this.getAttributes().get("level").isLowerThan(new ValueInt(level))).getValue()) {
+			return null;
+		}
+
+		ArrayList arr = new ArrayList();
+		for (ZMI zmi: this.getSons()) {
+			ArrayList zmis = zmi.getZMIWithLevel(level);
+			if (zmis != null) {
+				arr.addAll(zmis);
+			}
+		}
+		return arr.size() > 0 ? arr : null;
+	}
+
+	public Long getNodeDepth() {
+		Long depth = ((ValueInt)this.attributes.get("level")).getValue();
+		for (ZMI son: sons) {
+			Long sonDepth = son.getNodeDepth();
+			if (sonDepth > depth) {
+				depth = sonDepth;
+			}
+		}
+		return depth;
+	}
+
+	/**
+	 * Removes attribute with the given attributeName.
+	 */
 	public void removeAttribute(String attributeName) {
 		for (ZMI son: sons) {
 			son.removeAttribute(attributeName);
