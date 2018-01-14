@@ -1,12 +1,20 @@
 package pl.edu.mimuw.cloudatlas.modules.communication;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.util.HashMap;
 
 public class CommunicationServer {
+
+    private HashMap<String, CommunicationMessage> receivedPackets = new HashMap<>();
 
     public void start(Integer portNumber) {
         DatagramSocket serverSocket = null;
@@ -25,7 +33,12 @@ public class CommunicationServer {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            String sentence = new String( receivePacket.getData());
+            String sentence = new String(receivePacket.getData());
+            Type type = new TypeToken<HashMap<String, String>>(){}.getType();
+            Gson gson = new Gson();
+            HashMap<String, Object> map = gson.fromJson(sentence, type);
+            CommunicationMessage message = new CommunicationMessage(map);
+            receivedPackets.put(message.id, message);
             System.out.println("RECEIVED: " + sentence);
             InetAddress IPAddress = receivePacket.getAddress();
             int port = receivePacket.getPort();

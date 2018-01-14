@@ -70,7 +70,7 @@ public class CommunicationClient {
         return false;
     }
 
-    public void sendPacket(byte[] data, Integer packetNumber, Integer totalNumber, Integer portNumber) {
+    public void sendPacket(byte[] data,  Integer portNumber) {
         try {
             DatagramSocket clientSocket = new DatagramSocket();
             InetAddress IPAddress = null;
@@ -117,17 +117,17 @@ public class CommunicationClient {
         Integer startIndex = 0;
         String id = UUID.randomUUID().toString();;
         HashMap<String, Object> request = new HashMap();
+        byte[] responseBytes = gson.toJson(request).getBytes();
         while (startIndex < jsonBytes.length) {
             request.put("pn", packetNumber);
             request.put("tn", totalNumber);
             request.put("id", id);
-            request.put("ts", (new Date()).getTime());
-            request.put("data", response);
-            byte[] responseBytes = gson.toJson(request).getBytes();
             if (packetNumber == totalNumber) {
                 chunkSize = jsonBytes.length - jsonBytes.length * (totalNumber - 1);
             }
-            this.sendPacket(Arrays.copyOfRange(responseBytes, startIndex, startIndex + chunkSize), packetNumber, totalNumber, 9876);
+            request.put("data", Arrays.copyOfRange(responseBytes, startIndex, startIndex + chunkSize));
+            request.put("ts", (new Date()).getTime());
+            this.sendPacket(gson.toJson(request).getBytes(), 9876);
             startIndex += chunkSize;
             packetNumber++;
         }
