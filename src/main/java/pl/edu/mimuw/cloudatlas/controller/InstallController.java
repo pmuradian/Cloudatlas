@@ -22,7 +22,7 @@ public class InstallController implements HttpHandler {
         InputStream is = t.getRequestBody();
         HashMap<String, String[]> queries = new HashMap();
 
-        executePost(this.getSignerIP() + ":9778/client/sign", Helpers.convertStreamToString(is));
+        signQuery(this.getSignerIP() + ":9778/client/sign", Helpers.convertStreamToString(is));
 
         for (String line: Helpers.convertStreamToString(is).split("\n")) {
 
@@ -62,7 +62,7 @@ public class InstallController implements HttpHandler {
         return ip;
     }
 
-    public String executePost(String targetURL, String urlParameters) {
+    public String signQuery(String targetURL, String urlParameters) {
         HttpURLConnection connection = null;
 
         try {

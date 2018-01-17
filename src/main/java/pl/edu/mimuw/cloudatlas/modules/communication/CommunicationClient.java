@@ -72,12 +72,11 @@ public class CommunicationClient {
                                 message.timeStamps.add(receivedTime);
                                 System.out.println("FROM SERVER:" + response);
                                 roundTripDelay = message.calculateRoundTrip();
-//                                packetReceived = true;
                                 synchronized(wait) {
                                     packetReceived = true;
+                                    socket.close();
                                     wait.notify();
                                 }
-                                socket.close();
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -90,6 +89,9 @@ public class CommunicationClient {
                     wait.wait(4000);
                 }
             } catch (InterruptedException e) { e.printStackTrace(); }
+            if (!socket.isClosed()) {
+                socket.close();
+            }
             return packetReceived;
 
         } catch (SocketException e) {

@@ -27,14 +27,11 @@ package pl.edu.mimuw.cloudatlas.interpreter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.rmi.RemoteException;
-import java.sql.Time;
 import java.text.ParseException;
 import java.util.*;
 
@@ -44,7 +41,6 @@ import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
 import pl.edu.mimuw.cloudatlas.model.*;
 import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationClient;
-import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationMessage;
 import pl.edu.mimuw.cloudatlas.modules.communication.CommunicationServer;
 
 public class Main {
@@ -104,12 +100,16 @@ public class Main {
 	public static ValueContact selectContact(ArrayList<ZMI> zmis) {
 		ArrayList<ValueContact> contacts = new ArrayList();
 		for (ZMI zmi: zmis) {
-			ValueSet contacts1 = (ValueSet) zmi.getAttributes().getOrNull("contacts");
-			if (contacts1 != null) {
-				for (Value contact : contacts1.getValue())
+			ValueSet zmiContacts = (ValueSet) zmi.getAttributes().getOrNull("contacts");
+			if (zmiContacts != null) {
+				for (Value contact : zmiContacts.getValue())
 					if (contact != null) {
-					contacts.add((ValueContact) contact);
-				}
+						String contactName = ((ValueContact)contact).getName().getName();
+						String zmiName = ((ValueString)node.getAttributes().get("owner")).getValue();
+						if (!contactName.equals(zmiName)) {
+							contacts.add((ValueContact) contact);
+						}
+					}
 			}
 		}
 
@@ -135,6 +135,19 @@ public class Main {
 		List list = Arrays.asList(new Value[] {
 				violet07Contact, khaki13Contact, khaki31Contact, whatever01Contact, whatever02Contact
 		});
+
+		ArrayList<ValueContact> contacts = new ArrayList<>(list);
+		int i = 0;
+		int removeIndex = 0;
+		for (ValueContact contact: contacts) {
+			String contactName = contact.getName().getName();
+			String zmiName = ((ValueString)node.getAttributes().get("owner")).getValue();
+			if (contactName.equals(zmiName)) {
+				removeIndex = i;
+			}
+			i++;
+		}
+		contacts.remove(removeIndex);
 
 		return new ArrayList(list);
 	}
@@ -178,9 +191,9 @@ public class Main {
 	}
 	
 	private static PathName getPathName(ZMI zmi) {
-		String name = ((ValueString)zmi.getAttributes().get("name")).getValue();
-//		PathName father = zmi.getFatherName() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
-		return zmi.getFather() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
+		String name = ((ValueString)zmi.getAttributes().get("owner")).getValue();
+		PathName pathName = new PathName(name);
+		return pathName;
 	}
 
 	public static void updateZMIAttributes(String zmiPath, Map<String, Object> attributeMap) {
@@ -219,6 +232,9 @@ public class Main {
 						for (Value str: list.getValue()) {
 							queries.add(((ValueString)str).getValue());
 						}
+						// Uninstall active queries before installing new updated ZMI queries
+						uninstallQuery(zmi, entry.getKey().getName());
+
 						installQuery(zmi, entry.getKey().getName(), queries.toArray(new String[queries.size()]));
 					}
 				}
@@ -324,16 +340,19 @@ public class Main {
 		root = new ZMI();
 		root.getAttributes().add("level", new ValueInt(0l));
 		root.getAttributes().add("name", new ValueString(null));
+		root.getAttributes().add("owner", new ValueString(null));
 		
 		ZMI uw = new ZMI(root);
 		root.addSon(uw);
 		uw.getAttributes().add("level", new ValueInt(1l));
 		uw.getAttributes().add("name", new ValueString("uw"));
+		uw.getAttributes().add("owner", new ValueString("/uw"));
 		
 		ZMI pjwstk = new ZMI(root);
 		root.addSon(pjwstk);
 		pjwstk.getAttributes().add("level", new ValueInt(1l));
 		pjwstk.getAttributes().add("name", new ValueString("pjwstk"));
+		pjwstk.getAttributes().add("owner", new ValueString("/pjwstk"));
 		
 		ZMI violet07 = new ZMI(uw);
 		uw.addSon(violet07);
