@@ -79,6 +79,10 @@ public class Main {
 		startGossiping(gossipType);
 	}
 
+	public static ZMI getNode() {
+		return node;
+	}
+
 	public static void startGossiping(GossipType type) {
 		// Random selection probability for all levels
 		gossipTimer.schedule(new TimerTask() {

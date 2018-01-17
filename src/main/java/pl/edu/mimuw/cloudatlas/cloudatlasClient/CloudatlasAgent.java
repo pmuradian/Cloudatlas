@@ -15,7 +15,7 @@ public class CloudatlasAgent implements QueryExecutor {
     @Override
     public HashMap<String, Value> execute(String query) throws RemoteException {
         try {
-            return Main.executeQueries(Main.root, query);
+            return Main.executeQueries(Main.getNode(), query);
         } catch (Exception e) {
             System.err.println("Server exception:");
             e.printStackTrace();
@@ -26,7 +26,7 @@ public class CloudatlasAgent implements QueryExecutor {
     @Override
     public String installQuery(String attributeName, String[] queries) throws RemoteException {
         try {
-            Main.installQuery(Main.root, attributeName, queries);
+            Main.installQuery(Main.getNode(), attributeName, queries);
             System.out.println("Query installed");
             return "Query installed";
         } catch (Exception e) {
@@ -39,7 +39,7 @@ public class CloudatlasAgent implements QueryExecutor {
     @Override
     public String uninstallQuery(String attributeName) throws RemoteException {
         try {
-            return Main.uninstallQuery(Main.root, attributeName);
+            return Main.uninstallQuery(Main.getNode(), attributeName);
         } catch (Exception e) {
             System.err.println("Server exception:");
             e.printStackTrace();

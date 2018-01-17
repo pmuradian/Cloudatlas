@@ -3,7 +3,14 @@ package pl.edu.mimuw.cloudatlas.helpers;
 import pl.edu.mimuw.cloudatlas.model.ZMI;
 
 import java.io.*;
+import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 
 public class Helpers {
@@ -79,5 +86,50 @@ public class Helpers {
             }
         }
         return zmi;
+    }
+
+    public static String publicKeyToString(PublicKey publ) {
+        KeyFactory fact = null;
+        try {
+            fact = KeyFactory.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        X509EncodedKeySpec spec = null;
+        try {
+            spec = fact.getKeySpec(publ,
+                    X509EncodedKeySpec.class);
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+        return base64Encode(spec.getEncoded());
+    }
+
+    public static PublicKey stringToPublicKey(String stored) {
+        byte[] data = base64Decode(stored);
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(data);
+        KeyFactory fact = null;
+        try {
+            fact = KeyFactory.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        try {
+            return fact.generatePublic(spec);
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static String base64Encode(byte[] bytes) {
+        String string = new String(Base64.getEncoder().encode(bytes));
+        return string;
+    }
+
+    public static byte[] base64Decode(String string) {
+        byte[] decodedBytes = Base64.getDecoder().decode(string);
+        return decodedBytes;
     }
 }

@@ -20,8 +20,10 @@ public class CommunicationClient {
 
     private boolean packetReceived = false;
     private Long roundTripDelay = 0l;
+    private Long tolerableDelay = 10l;
     DatagramSocket clientSocket;
     InetAddress IPAddress;
+
 
     public boolean send(String message, String receiverName,  Integer portNumber) {
 //        DatagramSocket clientSocket = null;
@@ -111,6 +113,18 @@ public class CommunicationClient {
                             try {
                                 DatagramPacket receivePacket = new DatagramPacket(data, data.length);
                                 clientSocket.receive(receivePacket);
+//                                Double receivedTime = Helpers.generateTimestamp();
+//                                Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
+//                                Gson gson = new Gson();
+//                                String response = new String(receivePacket.getData(), receivePacket.getOffset(), receivePacket.getLength());
+//                                HashMap<String, Object> map = gson.fromJson(response, type);
+//                                ComMessage message = new ComMessage(map);
+//                                message.timeStamps.add(receivedTime);
+//
+//                                // Drop packets with high round trip times
+//                                if (roundTripDelay + tolerableDelay < message.calculateRoundTrip()) {
+//
+//                                }
                                 String modifiedSentence = new String(receivePacket.getData());
                                 System.out.println("FROM SERVER:" + modifiedSentence);
                             } catch (IOException e) {

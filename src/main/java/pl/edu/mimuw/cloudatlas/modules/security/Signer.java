@@ -5,10 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import pl.edu.mimuw.cloudatlas.cloudatlasClient.RequestExecutor;
 import pl.edu.mimuw.cloudatlas.helpers.Helpers;
-import pl.edu.mimuw.cloudatlas.model.ZMI;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -16,7 +13,6 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.reflect.Type;
 import java.security.*;
 import java.util.HashMap;
 
@@ -35,22 +31,26 @@ public class Signer implements HttpHandler {
 
             InputStream is = t.getRequestBody();
             String body = Helpers.convertStreamToString(is);
-//            Type type = new TypeToken<HashMap<String, String>>(){}.getType();
-            HashMap<String, String> response = new HashMap<>();
+            is.close();
+            HashMap<String, Object> response = new HashMap<>();
 
+            // Sign query
             Cipher signCipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
             signCipher.init(Cipher.ENCRYPT_MODE, privateKey);
             byte[] encryptedBytes = signCipher.doFinal(SHA1.calculate(body.getBytes()));
-            response.put("signature", new String(encryptedBytes));
-            response.put("key", publicKey.toString());
+
+            // response body
+            response.put("signature", Helpers.byteArrayToList(encryptedBytes));
+            response.put("key", Helpers.publicKeyToString(publicKey));
 
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             String resp = gson.toJson(response);
+            byte[] bytes = resp.getBytes();
 
             t.sendResponseHeaders(200, resp.length());
             OutputStream os = t.getResponseBody();
-            os.write(resp.getBytes());
+            os.write(bytes);
             os.close();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
