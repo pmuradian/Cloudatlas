@@ -25,14 +25,21 @@
 package pl.edu.mimuw.cloudatlas.interpreter;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.rmi.RemoteException;
+import java.sql.Time;
 import java.text.ParseException;
 import java.util.*;
+
+import org.ini4j.Ini;
+import org.ini4j.IniPreferences;
 import pl.edu.mimuw.cloudatlas.interpreter.query.Yylex;
 import pl.edu.mimuw.cloudatlas.interpreter.query.parser;
 import pl.edu.mimuw.cloudatlas.model.*;
@@ -44,6 +51,10 @@ public class Main {
 	public static ZMI root;
 	private static ZMI node;
 	private static HashMap<String, Timer> installedQueryTimers = new HashMap<>();
+	private static Timer gossipTimer = new Timer();
+	private static GossipType gossipType = GossipType.RandomSameProbability;
+	private static Long gossipPeriod = 5000l;
+	private static java.util.prefs.Preferences prefs;
 	
 	public static void main(String[] args) {
 
@@ -59,26 +70,35 @@ public class Main {
 		}
 
 		CommunicationServer server = new CommunicationServer();
-//		server.start(9876);
-//		CommunicationClient client = new CommunicationClient();
-//		client.send("asdf", 9876);
-//		initializeFromFile(filepath);
-		startGossiping(GossipType.RandomExpProbability);
+		server.start(9876);
+		setupFromConfigurationFile("config.ini");
+		startGossiping(gossipType);
 	}
 
 	public static void initializeHierarchy() throws Exception {
 		root = createTestHierarchy();
+		CommunicationServer server = new CommunicationServer();
+		server.start(9876);
+		setupFromConfigurationFile("config.ini");
+		startGossiping(gossipType);
 	}
 
 	public static void startGossiping(GossipType type) {
 		// Random selection probability for all levels
-		GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
-		ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
-		CommunicationClient client = new CommunicationClient();
-		boolean isConnected = true;//client.connectTo(contact.getName().getSingletonName());
-		if (isConnected) {
-			client.sendZMI(node, contact.getName().getSingletonName());
-		}
+		gossipTimer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
+				ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
+				CommunicationClient client = new CommunicationClient();
+				String name = contact.getName().getSingletonName();
+				String ip = prefs.node("ip_addresses").get(name, "localhost");
+				boolean isConnected = client.connectTo(ip);
+				if (isConnected) {
+					client.sendZMI(node);
+				}
+			}
+		}, 0, gossipPeriod);
 	}
 
 	public static ValueContact selectContact(ArrayList<ZMI> zmis) {
@@ -119,6 +139,25 @@ public class Main {
 		return new ArrayList(list);
 	}
 
+	private static void setupFromConfigurationFile(String path) {
+		File iniFile = new File(path);
+		File gossipIni = new File("gossip.ini");
+		Ini ini = null;
+		Ini gossip = null;
+		try {
+			ini = new Ini(iniFile);
+			gossip = new Ini(gossipIni);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		prefs = new IniPreferences(ini);
+		String nodeName = prefs.node("current_node").get("node", "violet07");
+		node = root.sonForPath("/uw/" + nodeName);
+		IniPreferences gossipPrefs = new IniPreferences(gossip);
+		gossipType = GossipType.fromString(gossipPrefs.node("gossip_option").get("option", "RSP"));
+		gossipPeriod = gossipPrefs.node("gossip_option").getLong("interval", 5000);
+	}
+
 	// Will start interpreter with the queries in file, will install queries to the root node
 	private static void initializeFromFile(String path) {
 		try {
@@ -140,6 +179,7 @@ public class Main {
 	
 	private static PathName getPathName(ZMI zmi) {
 		String name = ((ValueString)zmi.getAttributes().get("name")).getValue();
+//		PathName father = zmi.getFatherName() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
 		return zmi.getFather() == null? PathName.ROOT : getPathName(zmi.getFather()).levelDown(name);
 	}
 
@@ -165,6 +205,30 @@ public class Main {
 		}
 
 		System.out.println("Attributes for " + zmiPath + " were updated by Fetcher");
+	}
+
+	public static void updateZMIAttributes(ZMI newZMI) {
+		ZMI zmi = root.sonForPath(getPathName(newZMI).getName());
+		if (zmi != null) {
+			AttributesMap attributesMap = newZMI.getAttributes();
+			for (Map.Entry<Attribute, Value> entry: attributesMap) {
+				List<String> queries = new ArrayList<>();
+				if (entry.getValue().getType().getPrimaryType() == Type.PrimaryType.LIST) {
+					ValueList list = (ValueList) entry.getValue();
+					if (list.getValue().size() > 0 && list.getValue().get(0).getClass() == ValueQuery.class) {
+						for (Value str: list.getValue()) {
+							queries.add(((ValueString)str).getValue());
+						}
+						installQuery(zmi, entry.getKey().getName(), queries.toArray(new String[queries.size()]));
+					}
+				}
+				else {
+					zmi.getAttributes().addOrChange(entry.getKey(), entry.getValue());
+				}
+			}
+		}
+
+		System.out.println("Attributes were updated by Gossiping");
 	}
 	
 	public static HashMap<String, Value> executeQueries(ZMI zmi, String query) throws Exception {
@@ -202,7 +266,7 @@ public class Main {
 		ValueList queryValues = new ValueList(TypePrimitive.STRING);
 		for (String query: queries) {
 			try {
-				queryValues.add(new ValueString(query));
+				queryValues.add(new ValueQuery(query));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
@@ -296,8 +360,6 @@ public class Main {
 		});
 		violet07.getAttributes().add("some_names", new ValueList(list, TypePrimitive.STRING));
 		violet07.getAttributes().add("expiry", new ValueDuration(13l, 12l, 0l, 0l, 0l));
-
-		node = violet07;
 		
 		ZMI khaki31 = new ZMI(uw);
 		uw.addSon(khaki31);

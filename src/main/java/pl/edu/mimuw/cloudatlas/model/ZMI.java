@@ -68,7 +68,7 @@ public class ZMI implements Cloneable, Serializable {
 	public ZMI getFather() {
 		return father;
 	}
-	
+
 	/**
 	 * Sets or changes a father of this ZMI in a tree. This method does not perform any operation on the
 	 * <code>father</code>. Especially, setting this object as a <code>father</code>'s son must be done separately.
