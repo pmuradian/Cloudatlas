@@ -37,3 +37,12 @@ In case the above method to run the program is not working
 3: If intellij is not present, run java -Djava.security.policy=client.policy Fetcher
                                    java -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.cloudatlasClient.Client
                                    java -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy pl.edu.mimuw.cloudatlas.cloudatlasServer.Server
+
+                                                        =========== UPDATE ===========
+
+config.ini is the main configuration file, before starting Cloudatlas every value in config.ini must be configured with the correct ip addresses.
+gossip.ini is the configuration file for gossiping methods.
+
+To start cloudatlas:
+1) run rmiregistry from /target/classes folder.
+2) use run_server, run_client, run_signer and run_fetcher executable files from projects home folder (Cloudatlas).
