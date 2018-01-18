@@ -7,13 +7,10 @@
     <list default="true" id="23df78f8-fb4b-4500-a581-a3ae262daec0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ini" afterPath="$PROJECT_DIR$/config.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/CloudatlasAgent.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/CloudatlasAgent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/helpers/Helpers.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/helpers/Helpers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,8 +37,28 @@
       <file leaf-file-name="InstallController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Signer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuerySigner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -57,37 +74,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasRMI/QueryExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasServer/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="865">
-              <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+            <state relative-caret-position="905">
+              <caret line="129" column="41" lean-forward="true" selection-start-line="129" selection-start-column="41" selection-end-line="129" selection-end-column="41" />
               <folding>
-                <element signature="e#3140#3141#0" expanded="true" />
-                <element signature="e#3158#3159#0" expanded="true" />
-                <element signature="e#11495#11679#0" expanded="true" />
-                <element signature="e#11678#11679#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3139#3140#0" expanded="true" />
+                <element signature="e#3157#3158#0" expanded="true" />
+                <element signature="e#3286#3896#0" expanded="true" />
+                <element signature="e#3895#3896#0" expanded="true" />
+                <element signature="e#11808#11992#0" expanded="true" />
+                <element signature="e#11991#11992#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZMI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,40 +116,28 @@
       <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="45">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java">
+      <file leaf-file-name="CommunicationClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SHA1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/SHA1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="35">
+              <caret line="128" column="88" lean-forward="true" selection-start-line="128" selection-start-column="88" selection-end-line="128" selection-end-column="88" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java">
+      <file leaf-file-name="CommunicationServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="36" column="63" lean-forward="false" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+            <state relative-caret-position="353">
+              <caret line="51" column="78" lean-forward="true" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -223,18 +222,18 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/SHA1.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/GossipType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java" />
         <option value="$PROJECT_DIR$/gossip.ini" />
-        <option value="$PROJECT_DIR$/config.ini" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/UninstallController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/helpers/Helpers.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/CloudatlasAgent.java" />
+        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/CloudatlasAgent.java" />
       </list>
     </option>
   </component>
@@ -334,34 +333,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlasClient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cloudatlas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlasRMI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cloudatlas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlasServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cloudatlas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="interpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cloudatlas" type="b2602c69:ProjectViewProjectNode" />
@@ -392,11 +364,6 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Cloudatlas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cloudatlas" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -410,7 +377,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4119403" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="SearchEverywhereHistoryKey" value="Main&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;Ma&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;Si&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java&#10;Q&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java&#10;Hel&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/helpers/Helpers.java&#10;Goss&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/GossipType.java&#10;Zmi&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Fet&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/fetcher/Fetcher.java&#10;ZMI&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.ZMI&#10;Fetcher&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/fetcher/Fetcher.java&#10;Feth&#9;PSI&#9;JAVA://com.sun.org.apache.xml.internal.utils.SafeThread&#10;Clie&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java&#10;Res&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.ResultSingle&#10;Func&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Functions.java&#10;Inter&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Interpreter.java&#10;Envi&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.Environment&#10;Functi&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.Functions&#10;MAin&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;pom&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;Main.&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;ZMI'&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;At&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java&#10;Val&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java&#10;Att&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java&#10;Attrib&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.Attribute&#10;pom.xml&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;ValueDur&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueDuration.java" />
+    <property name="SearchEverywhereHistoryKey" value="MAin&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;Main&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;Ma&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;Si&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java&#10;Q&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java&#10;Hel&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/helpers/Helpers.java&#10;Goss&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/GossipType.java&#10;Zmi&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Fet&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/fetcher/Fetcher.java&#10;ZMI&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.ZMI&#10;Fetcher&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/fetcher/Fetcher.java&#10;Feth&#9;PSI&#9;JAVA://com.sun.org.apache.xml.internal.utils.SafeThread&#10;Clie&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java&#10;Res&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.ResultSingle&#10;Func&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Functions.java&#10;Inter&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/Cloudatlas/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Interpreter.java&#10;Envi&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.Environment&#10;Functi&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.interpreter.Functions&#10;pom&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;Main.&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java&#10;type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;ZMI'&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java&#10;Type&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/TypePrimitive.java&#10;At&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Attribute.java&#10;Val&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/Value.java&#10;Att&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/AttributesMap.java&#10;Attrib&#9;PSI&#9;JAVA://pl.edu.mimuw.cloudatlas.model.Attribute&#10;pom.xml&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/pom.xml&#10;ValueDur&#9;FILE&#9;file:///Users/azazel/Documents/Projects/MIMUW/cloudatlas1/src/main/java/pl/edu/mimuw/cloudatlas/model/ValueDuration.java" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build/Server/build" />
@@ -693,11 +660,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1113" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297561" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287805" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280943" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -705,7 +673,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25079873" sideWeight="0.49490538" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34675834" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21853659" sideWeight="0.8743344" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21807465" sideWeight="0.8743344" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2113951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -713,7 +681,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30353636" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30353636" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -807,49 +775,25 @@
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="228" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="229" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="232" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/OutputStream.java</url>
           <line>106</line>
           <properties />
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>78</line>
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java</url>
+          <line>24</line>
           <properties />
-          <option name="timeStamp" value="252" />
+          <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java</url>
-          <line>42</line>
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java</url>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="253" />
+          <option name="timeStamp" value="270" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="261" />
+      <option name="time" value="272" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -964,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/GossipLevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -990,14 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,28 +967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="119" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11805">
           <caret line="843" column="0" lean-forward="false" selection-start-line="843" selection-start-column="0" selection-end-line="843" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="49" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1176,16 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/cloudatlasClient/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1226,32 +1127,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="51" column="78" lean-forward="true" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/model/ZMI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/communication/CommunicationClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="128" column="88" lean-forward="true" selection-start-line="128" selection-start-column="88" selection-end-line="128" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/QuerySigner.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/modules/security/Signer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/interpreter/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
-          <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+        <state relative-caret-position="905">
+          <caret line="129" column="41" lean-forward="true" selection-start-line="129" selection-start-column="41" selection-end-line="129" selection-end-column="41" />
           <folding>
-            <element signature="e#3140#3141#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#11495#11679#0" expanded="true" />
-            <element signature="e#11678#11679#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3139#3140#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3286#3896#0" expanded="true" />
+            <element signature="e#3895#3896#0" expanded="true" />
+            <element signature="e#11808#11992#0" expanded="true" />
+            <element signature="e#11991#11992#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/mimuw/cloudatlas/controller/InstallController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

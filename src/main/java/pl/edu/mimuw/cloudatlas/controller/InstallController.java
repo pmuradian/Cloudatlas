@@ -38,50 +38,52 @@ public class InstallController implements HttpHandler {
         InputStream is = t.getRequestBody();
         HashMap<String, String[]> queries = new HashMap();
 
-//        String json = signQuery("http://" + this.getSignerIP() + ":9778/client/sign", Helpers.convertStreamToString(is));
-//
-//        Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
-//        Gson gson = new Gson();
-//        HashMap<String, Object> res = gson.fromJson(json, type);
-//        String signature = new String(Helpers.arrayToBytes((ArrayList<Double>) res.get("signature")));
-//        PublicKey key = Helpers.stringToPublicKey((String)res.get("key"));
-//
-//        if (checkSignature(key, signature, Helpers.convertStreamToString(is))) {
-//
-//        }
+        String json = signQuery("http://" + this.getSignerIP() + ":9778/client/sign", Helpers.convertStreamToString(is));
 
-        for (String line: Helpers.convertStreamToString(is).split("\n")) {
-
-            String[] splitString = line.split(":");
-            if (splitString.length != 2) {
-                String response = "Wrong input";
-                t.sendResponseHeaders(400, response.length());
-                OutputStream os = t.getResponseBody();
-                os.write(response.getBytes());
-                os.close();
-                return;
-            }
-            else {
-                queries.put(splitString[0], splitString[1].split(";"));
-            }
-        }
-
-        RequestExecutor.installQueries(queries);
+        Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
+        Gson gson = new Gson();
+        HashMap<String, Object> res = gson.fromJson(json, type);
+        PublicKey key = Helpers.stringToPublicKey((String)res.get("key"));
 
         String response = "Queries are installed";
+
+        if (!checkSignature(key, Helpers.arrayToBytes((ArrayList<Double>) res.get("signature")), Helpers.convertStreamToString(is))) {
+            response = "Query signer SHA1 mismatch: Query installation denied";
+        } else {
+            for (String line: Helpers.convertStreamToString(is).split("\n")) {
+
+                String[] splitString = line.split(":");
+                if (splitString.length != 2) {
+                    response = "Wrong query syntax";
+                    System.out.println(response);
+                    t.sendResponseHeaders(400, response.length());
+                    OutputStream os = t.getResponseBody();
+                    os.write(response.getBytes());
+                    os.close();
+                    return;
+                }
+                else {
+                    queries.put(splitString[0], splitString[1].split(";"));
+                }
+            }
+            RequestExecutor.installQueries(queries);
+        }
+        System.out.println(response);
+
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());
         os.close();
     }
 
-    private boolean checkSignature(PublicKey key, String signature, String originalString) {
-        Cipher verifyCipher = null;
+    private boolean checkSignature(PublicKey key, byte[] signature, String originalString) {
         try {
-            verifyCipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
+            Cipher verifyCipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
             verifyCipher.init(Cipher.DECRYPT_MODE, key);
-            String decryptedBytes = new String(verifyCipher.doFinal(signature.getBytes()));
+            String decryptedBytes = new String(verifyCipher.doFinal(signature));
             String shaValue = new String(SHA1.calculate(originalString.getBytes()));
+
+            //check calculated and received SHA1 values
             if (decryptedBytes.equals(shaValue)) {
                 return true;
             }

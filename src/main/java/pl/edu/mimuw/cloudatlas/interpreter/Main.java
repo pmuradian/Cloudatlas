@@ -51,7 +51,7 @@ public class Main {
 	private static GossipType gossipType = GossipType.RandomSameProbability;
 	private static Long gossipPeriod = 5000l;
 	private static java.util.prefs.Preferences prefs;
-	
+
 	public static void main(String[] args) {
 
 		try {
@@ -91,8 +91,9 @@ public class Main {
 				GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
 				ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
 				CommunicationClient client = new CommunicationClient();
-				String name = contact.getName().getSingletonName();
+				String name = "khaki31";//"violet07"//contact.getName().getSingletonName();
 				String ip = prefs.node("ip_addresses").get(name, "localhost");
+				System.out.println("Node selected: " + name + " ip: " + ip);
 				boolean isConnected = client.connectTo(ip);
 				if (isConnected) {
 					client.sendZMI(node);
@@ -193,7 +194,7 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	private static PathName getPathName(ZMI zmi) {
 		String name = ((ValueString)zmi.getAttributes().get("owner")).getValue();
 		PathName pathName = new PathName(name);
@@ -226,6 +227,7 @@ public class Main {
 
 	public static void updateZMIAttributes(ZMI newZMI) {
 		ZMI zmi = root.sonForPath(getPathName(newZMI).getName());
+//		ZMI zmi = root.sonForPath("/uw/khaki13");
 		if (zmi != null) {
 			AttributesMap attributesMap = newZMI.getAttributes();
 			for (Map.Entry<Attribute, Value> entry: attributesMap) {
@@ -243,14 +245,20 @@ public class Main {
 					}
 				}
 				else {
-					zmi.getAttributes().addOrChange(entry.getKey(), entry.getValue());
+					if (entry.getKey().toString().equals("name") || entry.getKey().toString().equals("owner")) {
+
+					}
+					else {
+						zmi.getAttributes().addOrChange(entry.getKey(), entry.getValue());
+					}
 				}
 			}
 		}
 
-		System.out.println("Attributes were updated by Gossiping");
+		System.out.println("Updated: " + getPathName(zmi).getName());
+//		System.out.println("Attributes count was: " + );
 	}
-	
+
 	public static HashMap<String, Value> executeQueries(ZMI zmi, String query) throws Exception {
 		if(!zmi.getSons().isEmpty()) {
 			HashMap attributeMap = new HashMap<Attribute, Value>();
@@ -324,40 +332,40 @@ public class Main {
 		zmi.printAttributes(System.out);
 		return zmi;
 	}
-	
+
 	private static ValueContact createContact(String path, byte ip1, byte ip2, byte ip3, byte ip4)
 			throws UnknownHostException {
 		return new ValueContact(new PathName(path), InetAddress.getByAddress(new byte[] {
 			ip1, ip2, ip3, ip4
 		}));
 	}
-	
+
 	private static ZMI createTestHierarchy() throws ParseException, UnknownHostException {
 		ValueContact violet07Contact = createContact("/uw/violet07", (byte)10, (byte)1, (byte)1, (byte)10);
 		ValueContact khaki13Contact = createContact("/uw/khaki13", (byte)10, (byte)1, (byte)1, (byte)38);
 		ValueContact khaki31Contact = createContact("/uw/khaki31", (byte)10, (byte)1, (byte)1, (byte)39);
 		ValueContact whatever01Contact = createContact("/uw/whatever01", (byte)82, (byte)111, (byte)52, (byte)56);
 		ValueContact whatever02Contact = createContact("/uw/whatever02", (byte)82, (byte)111, (byte)52, (byte)57);
-		
+
 		List<Value> list;
-		
+
 		root = new ZMI();
 		root.getAttributes().add("level", new ValueInt(0l));
 		root.getAttributes().add("name", new ValueString(null));
 		root.getAttributes().add("owner", new ValueString(null));
-		
+
 		ZMI uw = new ZMI(root);
 		root.addSon(uw);
 		uw.getAttributes().add("level", new ValueInt(1l));
 		uw.getAttributes().add("name", new ValueString("uw"));
 		uw.getAttributes().add("owner", new ValueString("/uw"));
-		
+
 		ZMI pjwstk = new ZMI(root);
 		root.addSon(pjwstk);
 		pjwstk.getAttributes().add("level", new ValueInt(1l));
 		pjwstk.getAttributes().add("name", new ValueString("pjwstk"));
 		pjwstk.getAttributes().add("owner", new ValueString("/pjwstk"));
-		
+
 		ZMI violet07 = new ZMI(uw);
 		uw.addSon(violet07);
 		violet07.getAttributes().add("level", new ValueInt(2l));
@@ -383,7 +391,7 @@ public class Main {
 		});
 		violet07.getAttributes().add("some_names", new ValueList(list, TypePrimitive.STRING));
 		violet07.getAttributes().add("expiry", new ValueDuration(13l, 12l, 0l, 0l, 0l));
-		
+
 		ZMI khaki31 = new ZMI(uw);
 		uw.addSon(khaki31);
 		khaki31.getAttributes().add("level", new ValueInt(2l));
@@ -409,7 +417,7 @@ public class Main {
 		});
 		khaki31.getAttributes().add("some_names", new ValueList(list, TypePrimitive.STRING));
 		khaki31.getAttributes().add("expiry", new ValueDuration(-13l, -11l, 0l, 0l, 0l));
-		
+
 		ZMI khaki13 = new ZMI(uw);
 		uw.addSon(khaki13);
 		khaki13.getAttributes().add("level", new ValueInt(2l));
@@ -431,7 +439,7 @@ public class Main {
 		list = Arrays.asList(new Value[] {});
 		khaki13.getAttributes().add("some_names", new ValueList(list, TypePrimitive.STRING));
 		khaki13.getAttributes().add("expiry", new ValueDuration((Long)null));
-		
+
 		ZMI whatever01 = new ZMI(pjwstk);
 		pjwstk.addSon(whatever01);
 		whatever01.getAttributes().add("level", new ValueInt(2l));
@@ -455,7 +463,7 @@ public class Main {
 			new ValueString("rewrite")
 		});
 		whatever01.getAttributes().add("php_modules", new ValueList(list, TypePrimitive.STRING));
-		
+
 		ZMI whatever02 = new ZMI(pjwstk);
 		pjwstk.addSon(whatever02);
 		whatever02.getAttributes().add("level", new ValueInt(2l));
@@ -479,7 +487,7 @@ public class Main {
 			new ValueString("odbc")
 		});
 		whatever02.getAttributes().add("php_modules", new ValueList(list, TypePrimitive.STRING));
-		
+
 		return root;
 	}
 }

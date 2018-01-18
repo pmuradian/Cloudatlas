@@ -72,7 +72,7 @@ public class CommunicationClient {
                                 HashMap<String, Object> map = gson.fromJson(response, type);
                                 ComMessage message = new ComMessage(map);
                                 message.timeStamps.add(receivedTime);
-                                System.out.println("FROM SERVER:" + response);
+//                                System.out.println("FROM SERVER:" + response);
                                 roundTripDelay = message.calculateRoundTrip();
                                 synchronized(wait) {
                                     packetReceived = true;
@@ -125,8 +125,8 @@ public class CommunicationClient {
 //                                if (roundTripDelay + tolerableDelay < message.calculateRoundTrip()) {
 //
 //                                }
-                                String modifiedSentence = new String(receivePacket.getData());
-                                System.out.println("FROM SERVER:" + modifiedSentence);
+//                                String modifiedSentence = new String(receivePacket.getData());
+//                                System.out.println("FROM SERVER:" + modifiedSentence);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -149,6 +149,7 @@ public class CommunicationClient {
                 try {
                     clientSocket = new DatagramSocket();
                     IPAddress = InetAddress.getByName(receiverName);
+                    System.out.println("Connection established with: " + receiverName);
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 } catch (SocketException e) {

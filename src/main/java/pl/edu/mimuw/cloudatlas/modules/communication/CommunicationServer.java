@@ -48,7 +48,7 @@ public class CommunicationServer {
                                     receiveMessage(msg);
                                 }
                                 message.timeStamps.add(receivedTime);
-                                System.out.println("RECEIVED: " + sentence);
+//                                System.out.println("RECEIVED: " + sentence);
                                 InetAddress IPAddress = receivePacket.getAddress();
                                 int port = receivePacket.getPort();
                                 message.timeStamps.add(Helpers.generateTimestamp());
@@ -94,6 +94,7 @@ public class CommunicationServer {
                 public void run() {
                     if (receivedPackets.containsKey(message.id)) {
                         receivedPackets.remove(message.id);
+                        System.out.println("Packet dropped: id = " + message.id);
                     }
                 }
             }, 10000);
@@ -109,6 +110,7 @@ public class CommunicationServer {
         if (dataList.size() > 0) {
             byte[] bytes = Helpers.arrayToBytes(dataList);
             ZMI zmi = Helpers.bytesToZMI(bytes);
+            System.out.println("ZMI assambled: name = " + zmi.getAttributes().get("name"));
             Main.updateZMIAttributes(zmi);
         }
 
