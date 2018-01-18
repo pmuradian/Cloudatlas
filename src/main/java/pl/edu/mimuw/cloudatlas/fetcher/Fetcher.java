@@ -32,7 +32,6 @@ public class Fetcher {
     public static void main(String[] args) {
         File configIni = new File("config.ini");
         Ini ini = null;
-        Ini gossip = null;
         try {
             ini = new Ini(configIni);
         } catch (IOException e) {

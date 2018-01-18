@@ -11,6 +11,7 @@ public class QuerySigner {
     public static void main(String[] args) {
         try {
             startQuerySigner();
+            System.out.println("Query signer up and running");
         } catch (IOException e) {
             e.printStackTrace();
         }

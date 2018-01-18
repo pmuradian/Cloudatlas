@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -cp ./dependency/:target/classes/ pl.edu.mimuw.cloudatlas.modules.security.QuerySigner

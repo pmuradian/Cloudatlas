@@ -1,11 +1,6 @@
 #!/bin/sh
 
-NUM_TESTS=19
-
-for i in `seq $NUM_TESTS`; do
-	echo "Running test $i..."
-	./run < tests/$i.in > tmp.out
-	diff tmp.out tests/$i.out
-	echo
-	rm tmp.out
-done
+java -cp ./dependency/:target/classes/ -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.fetcher.Fetcher &
+java -cp ./dependency/:target/classes/ -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.cloudatlasClient.Client &
+java -cp ./dependency/:target/classes/ -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy pl.edu.mimuw.cloudatlas.cloudatlasServer.Server &
+java -cp ./dependency/:target/classes/ pl.edu.mimuw.cloudatlas.modules.security.QuerySigner &

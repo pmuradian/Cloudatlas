@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -cp ./dependency/:target/classes/ -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.fetcher.Fetcher
