@@ -3,9 +3,11 @@ package pl.edu.mimuw.cloudatlas.fetcher;
 import org.ini4j.Ini;
 import org.ini4j.IniPreferences;
 import pl.edu.mimuw.cloudatlas.cloudatlasRMI.MachineDescriptionFetcher;
+import pl.edu.mimuw.cloudatlas.interpreter.GossipType;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
 import java.rmi.RemoteException;
@@ -28,7 +30,17 @@ public class Fetcher {
     MachineDescriptionFetcher fetcher;
 
     public static void main(String[] args) {
-        Fetcher dataFetcher = new Fetcher("/uw/violet07");
+        File configIni = new File("config.ini");
+        Ini ini = null;
+        Ini gossip = null;
+        try {
+            ini = new Ini(configIni);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        IniPreferences prefs = new IniPreferences(ini);
+        String nodeName = prefs.node("current_node").get("node", "violet07");
+        Fetcher dataFetcher = new Fetcher("/uw/" + nodeName);
         dataFetcher.startFetching();
     }
 
