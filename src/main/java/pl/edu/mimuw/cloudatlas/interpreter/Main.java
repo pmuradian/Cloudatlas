@@ -91,7 +91,7 @@ public class Main {
 				GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
 				ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
 				CommunicationClient client = new CommunicationClient();
-				String name = "khaki31";//"violet07"//contact.getName().getSingletonName();
+				String name = "khaki31";//contact.getName().getSingletonName();
 				String ip = prefs.node("ip_addresses").get(name, "localhost");
 				System.out.println("Node selected: " + name + " ip: " + ip);
 				boolean isConnected = client.connectTo(ip);
