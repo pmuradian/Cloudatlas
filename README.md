@@ -38,7 +38,7 @@ In case the above method to run the program is not working
                                    java -Djava.security.policy=client.policy pl.edu.mimuw.cloudatlas.cloudatlasClient.Client
                                    java -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy pl.edu.mimuw.cloudatlas.cloudatlasServer.Server
 
-                                                        =========== UPDATE ===========
+================== UPDATE ==================
 
 config.ini is the main configuration file, before starting Cloudatlas every value in config.ini must be configured with the correct ip addresses.
 gossip.ini is the configuration file for gossiping methods.
