@@ -38,7 +38,8 @@ public class InstallController implements HttpHandler {
         InputStream is = t.getRequestBody();
         HashMap<String, String[]> queries = new HashMap();
 
-        String json = signQuery("http://" + this.getSignerIP() + ":9778/client/sign", Helpers.convertStreamToString(is));
+        String query = Helpers.convertStreamToString(is);
+        String json = signQuery("http://" + this.getSignerIP() + ":9778/client/sign", query);
 
         Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
         Gson gson = new Gson();
@@ -47,15 +48,16 @@ public class InstallController implements HttpHandler {
 
         String response = "Queries are installed";
 
-        if (!checkSignature(key, Helpers.arrayToBytes((ArrayList<Double>) res.get("signature")), Helpers.convertStreamToString(is))) {
+        if (!checkSignature(key, Helpers.arrayToBytes((ArrayList<Double>) res.get("signature")), query)) {
             response = "Query signer SHA1 mismatch: Query installation denied";
         } else {
-            for (String line: Helpers.convertStreamToString(is).split("\n")) {
+            for (String line: query.split("\n")) {
 
                 String[] splitString = line.split(":");
                 if (splitString.length != 2) {
                     response = "Wrong query syntax";
                     System.out.println(response);
+                    t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
                     t.sendResponseHeaders(400, response.length());
                     OutputStream os = t.getResponseBody();
                     os.write(response.getBytes());
@@ -70,6 +72,7 @@ public class InstallController implements HttpHandler {
         }
         System.out.println(response);
 
+        t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());

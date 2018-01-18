@@ -25,6 +25,7 @@ public class PrintZMIController implements HttpHandler {
         Gson gson = builder.create();
         String response = gson.toJson(zmi);
 
+        t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());

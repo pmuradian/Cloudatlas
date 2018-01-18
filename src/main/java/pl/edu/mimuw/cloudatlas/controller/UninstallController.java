@@ -19,6 +19,8 @@ public class UninstallController implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
         RequestExecutor.uninstallQuery(Helpers.convertStreamToString(t.getRequestBody()));
         String response = "Query uninstalled";
+
+        t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());

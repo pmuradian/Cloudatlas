@@ -85,13 +85,13 @@ public class Main {
 
 	public static void startGossiping(GossipType type) {
 		// Random selection probability for all levels
+		GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
 		gossipTimer.schedule(new TimerTask() {
 			@Override
 			public void run() {
-				GossipLevelGenerator generator = new GossipLevelGenerator(type, node.getNodeDepth());
 				ValueContact contact = selectContact(root.getZMIWithLevel(generator.next()));
 				CommunicationClient client = new CommunicationClient();
-				String name = "khaki31";//contact.getName().getSingletonName();
+				String name = contact.getName().getSingletonName();
 				String ip = prefs.node("ip_addresses").get(name, "localhost");
 				System.out.println("Node selected: " + name + " ip: " + ip);
 				boolean isConnected = client.connectTo(ip);
@@ -154,7 +154,7 @@ public class Main {
 		}
 		contacts.remove(removeIndex);
 
-		return new ArrayList(list);
+		return contacts;
 	}
 
 	private static void setupFromConfigurationFile(String path) {
@@ -227,7 +227,6 @@ public class Main {
 
 	public static void updateZMIAttributes(ZMI newZMI) {
 		ZMI zmi = root.sonForPath(getPathName(newZMI).getName());
-//		ZMI zmi = root.sonForPath("/uw/khaki13");
 		if (zmi != null) {
 			AttributesMap attributesMap = newZMI.getAttributes();
 			for (Map.Entry<Attribute, Value> entry: attributesMap) {
@@ -256,7 +255,6 @@ public class Main {
 		}
 
 		System.out.println("Updated: " + getPathName(zmi).getName());
-//		System.out.println("Attributes count was: " + );
 	}
 
 	public static HashMap<String, Value> executeQueries(ZMI zmi, String query) throws Exception {
@@ -300,6 +298,7 @@ public class Main {
 			}
 		}
 		zmi.getAttributes().addOrChange(attributeName, queryValues);
+		System.out.println("Query installed: " + attributeName);
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			@Override
@@ -324,7 +323,7 @@ public class Main {
 		timer.cancel();
 		installedQueryTimers.remove(attributeName);
 		zmi.removeAttribute(attributeName);
-		System.out.println("Query uninstalled");
+		System.out.println("Query uninstalled: " + attributeName);
 		return "Attribute " + attributeName + " was removed";
 	}
 

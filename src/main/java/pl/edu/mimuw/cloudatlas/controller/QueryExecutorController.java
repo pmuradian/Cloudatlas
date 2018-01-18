@@ -23,6 +23,8 @@ public class QueryExecutorController implements HttpHandler {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String response = gson.toJson(result);
+
+        t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
         t.sendResponseHeaders(200, response.length());
         OutputStream os = t.getResponseBody();
         os.write(response.getBytes());
